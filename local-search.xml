@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="utf-8"?>
+<search>
+  
+  
+  
+  <entry>
+    <title>hexo开发问题总结</title>
+    <link href="/2020/09/02/hexo%E5%BC%80%E5%8F%91%E9%97%AE%E9%A2%98%E6%80%BB%E7%BB%93/"/>
+    <url>/2020/09/02/hexo%E5%BC%80%E5%8F%91%E9%97%AE%E9%A2%98%E6%80%BB%E7%BB%93/</url>
+    
+    <content type="html"><![CDATA[<h1 id="hexo插入图片无法显示-目录前多-com"><a href="#hexo插入图片无法显示-目录前多-com" class="headerlink" title="hexo插入图片无法显示 目录前多.com"></a>hexo插入图片无法显示 目录前多.com</h1><p>解决方案</p><pre><code class="hljs autohotkey"><span class="hljs-number">1</span>. 将博客根目录下的文件 `_config.yml` 中的 `post_asset_folder: <span class="hljs-literal">false</span>` 改为 `post_asset_folder: <span class="hljs-literal">true</span>`。<span class="hljs-number">2</span>. cmd 在博客根目录下 `npm install hexo-asset-image -–save`。<span class="hljs-number">3</span>. 将博客根目录下的文件 `package.json` 中的 `&quot;hexo-asset-image<span class="hljs-string">&quot;: &quot;</span><span class="hljs-number">1.0</span>.<span class="hljs-number">0</span><span class="hljs-string">&quot;` 修改为 `&quot;hexo-asset-image&quot;</span>: <span class="hljs-string">&quot;0.0.3&quot;</span>`，在博客根目录下 cmd `npm install`；<span class="hljs-number">4</span>. 修改 `博客根目录\node_modules\hexo-asset-image\index.js` 文件中的第 <span class="hljs-number">38</span> 行为 `var srcArray = decodeURI(src).split(&#x27;/&#x27;).filter(function(elem)&#123;`；<span class="hljs-number">5</span>. 在博客根目录下 cmd `hexo clean &amp;&amp; hexo g &amp;&amp; hexo s`，完成。</code></pre>]]></content>
+    
+    
+    
+    <tags>
+      
+      <tag>问题总结</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>Swagger-UI问题总结</title>
+    <link href="/2020/09/02/Swagger-UI%E9%97%AE%E9%A2%98%E6%80%BB%E7%BB%93/"/>
+    <url>/2020/09/02/Swagger-UI%E9%97%AE%E9%A2%98%E6%80%BB%E7%BB%93/</url>
+    
+    <content type="html"><![CDATA[<h1 id="swagger-ui放到线上运行时测试的url仍显示127-0-0-1"><a href="#swagger-ui放到线上运行时测试的url仍显示127-0-0-1" class="headerlink" title="swagger-ui放到线上运行时测试的url仍显示127.0.0.1"></a>swagger-ui放到线上运行时测试的url仍显示127.0.0.1</h1><p>需要在配置中加入如下配置，设置指定域名即可</p><p><img src="/2020/09/02/Swagger-UI%E9%97%AE%E9%A2%98%E6%80%BB%E7%BB%93/IPB7V08BUJ92M0H2ET67ELEKP.png" alt="图"></p><h1 id="报如下错误："><a href="#报如下错误：" class="headerlink" title="报如下错误："></a>报如下错误：</h1><p>java.lang.NumberFormatException:For input string:””</p><p>该错误是参数说明配置不完全导致 ，需要给定 example属性一个默认值</p>]]></content>
+    
+    
+    
+    <tags>
+      
+      <tag>问题总结</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>SpringBoot开发问题总结</title>
+    <link href="/2020/09/02/SpringBoot%E5%BC%80%E5%8F%91%E9%97%AE%E9%A2%98%E6%80%BB%E7%BB%93/"/>
+    <url>/2020/09/02/SpringBoot%E5%BC%80%E5%8F%91%E9%97%AE%E9%A2%98%E6%80%BB%E7%BB%93/</url>
+    
+    <content type="html"><![CDATA[<h1 id="拦截器配置不生效"><a href="#拦截器配置不生效" class="headerlink" title="拦截器配置不生效"></a>拦截器配置不生效</h1><p>配置拦截路径时不要包含上下文路径</p><h1 id="拦截器和跨域同时配置会出现冲突的问题"><a href="#拦截器和跨域同时配置会出现冲突的问题" class="headerlink" title="拦截器和跨域同时配置会出现冲突的问题"></a>拦截器和跨域同时配置会出现冲突的问题</h1><p>解决方案：不使用下面的方式</p><p><img src="/2020/09/02/SpringBoot%E5%BC%80%E5%8F%91%E9%97%AE%E9%A2%98%E6%80%BB%E7%BB%93/AA.png" alt="AA"></p><p>而使用这种方式<br><img src="/2020/09/02/SpringBoot%E5%BC%80%E5%8F%91%E9%97%AE%E9%A2%98%E6%80%BB%E7%BB%93/BB.png" alt="BB"></p><h1 id="SpringBoot分模块项目用-Autowired注解扫描不到部分包中的类"><a href="#SpringBoot分模块项目用-Autowired注解扫描不到部分包中的类" class="headerlink" title="SpringBoot分模块项目用@Autowired注解扫描不到部分包中的类"></a>SpringBoot分模块项目用@Autowired注解扫描不到部分包中的类</h1><p>尝试把SpringBoot启动类放在父级包中即可</p><h1 id="SpringBoot中使用拦截器后swagger-ui无法访问"><a href="#SpringBoot中使用拦截器后swagger-ui无法访问" class="headerlink" title="SpringBoot中使用拦截器后swagger-ui无法访问"></a>SpringBoot中使用拦截器后swagger-ui无法访问</h1><p>在拦截器配置中加入如下配置即可</p><pre><code class="hljs java">.excludePathPatterns(<span class="hljs-string">&quot;/swagger-resources/**&quot;</span>,<span class="hljs-string">&quot;/webjars/**&quot;</span>,<span class="hljs-string">&quot;/v2/**&quot;</span>,<span class="hljs-string">&quot;/swagger-ui.html/**&quot;</span>);</code></pre><h1 id="SpringBoot2-0后classpath中的静态文件无法访问"><a href="#SpringBoot2-0后classpath中的静态文件无法访问" class="headerlink" title="SpringBoot2.0后classpath中的静态文件无法访问"></a>SpringBoot2.0后classpath中的静态文件无法访问</h1><p><img src="/2020/09/02/SpringBoot%E5%BC%80%E5%8F%91%E9%97%AE%E9%A2%98%E6%80%BB%E7%BB%93/CC.png" alt="CC"></p>]]></content>
+    
+    
+    
+    <tags>
+      
+      <tag>问题总结</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>ElasticSearch问题总结</title>
+    <link href="/2020/09/02/ElasticSearch%E9%97%AE%E9%A2%98%E6%80%BB%E7%BB%93/"/>
+    <url>/2020/09/02/ElasticSearch%E9%97%AE%E9%A2%98%E6%80%BB%E7%BB%93/</url>
+    
+    <content type="html"><![CDATA[<h1 id="1-从5-0开始，Elasticsearch的docker镜像不再支持开箱即用集群模式-，需要在启动时加入一下参数进行设置"><a href="#1-从5-0开始，Elasticsearch的docker镜像不再支持开箱即用集群模式-，需要在启动时加入一下参数进行设置" class="headerlink" title="1.从5.0开始，Elasticsearch的docker镜像不再支持开箱即用集群模式  ，需要在启动时加入一下参数进行设置"></a>1.从5.0开始，Elasticsearch的docker镜像不再支持开箱即用集群模式  ，需要在启动时加入一下参数进行设置</h1><h2 id="docker-run-d-–name-elas-elasticsearch-Etransport-host-0-0-0-0-Ediscovery-zen-minimum-master-nodes-1"><a href="#docker-run-d-–name-elas-elasticsearch-Etransport-host-0-0-0-0-Ediscovery-zen-minimum-master-nodes-1" class="headerlink" title="docker run -d –name elas elasticsearch -Etransport.host=0.0.0.0 -Ediscovery.zen.minimum_master_nodes=1"></a>docker run -d –name elas elasticsearch -Etransport.host=0.0.0.0 -Ediscovery.zen.minimum_master_nodes=1</h2><h2 id="设置后会报一个错误-1-max-virtual-memory-areas-vm-max-map-count-65530-is-too-low-increase-to-at-least-262144"><a href="#设置后会报一个错误-1-max-virtual-memory-areas-vm-max-map-count-65530-is-too-low-increase-to-at-least-262144" class="headerlink" title="设置后会报一个错误[1]: max virtual memory areas vm.max_map_count [65530] is too low, increase to at least [262144]"></a>设置后会报一个错误[1]: max virtual memory areas vm.max_map_count [65530] is too low, increase to at least [262144]</h2><h3 id="需要在Linux下修改虚拟机内存大小限制"><a href="#需要在Linux下修改虚拟机内存大小限制" class="headerlink" title="需要在Linux下修改虚拟机内存大小限制"></a>需要在Linux下修改虚拟机内存大小限制</h3><h3 id="sysctl-w-vm-max-map-count-262144"><a href="#sysctl-w-vm-max-map-count-262144" class="headerlink" title="sysctl -w vm.max_map_count=262144"></a>sysctl -w vm.max_map_count=262144</h3>]]></content>
+    
+    
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>MySQL问题总结</title>
+    <link href="/2020/09/02/MySQL%E9%97%AE%E9%A2%98%E6%80%BB%E7%BB%93/"/>
+    <url>/2020/09/02/MySQL%E9%97%AE%E9%A2%98%E6%80%BB%E7%BB%93/</url>
+    
+    <content type="html"><![CDATA[<h1 id="MySQL启动不成功"><a href="#MySQL启动不成功" class="headerlink" title="MySQL启动不成功"></a>MySQL启动不成功</h1><p>首先需要查看log，看报错信息，一般问题报的很直接  log文件夹存在于/var/log的文件夹下叫mysqld.log</p><h2 id="如果报如下问题"><a href="#如果报如下问题" class="headerlink" title="如果报如下问题"></a>如果报如下问题</h2><pre><code>2018-08-20T16:55:31.552860Z 0 [ERROR] Can&#39;t start server : Bind on unix socket: Address already in use2018-08-20T16:55:31.552873Z 0 [ERROR] Do you already have another mysqld server running on socket: /var/lib/mysql/mysql.sock ?</code></pre><p>需要查看/var/lib/mysql/mysql.sock文件是否存在  存在就删除  若存在mysql.sock.lock一并删除</p><h1 id="MySQL在Window系统中配置文件的存储路径"><a href="#MySQL在Window系统中配置文件的存储路径" class="headerlink" title="MySQL在Window系统中配置文件的存储路径"></a>MySQL在Window系统中配置文件的存储路径</h1><pre><code>C:\ProgramData\MySQL\MySQL Server 8.0</code></pre>]]></content>
+    
+    
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>微信开发问题总结</title>
+    <link href="/2020/09/02/%E5%BE%AE%E4%BF%A1%E5%BC%80%E5%8F%91%E9%97%AE%E9%A2%98%E6%80%BB%E7%BB%93/"/>
+    <url>/2020/09/02/%E5%BE%AE%E4%BF%A1%E5%BC%80%E5%8F%91%E9%97%AE%E9%A2%98%E6%80%BB%E7%BB%93/</url>
+    
+    <content type="html"><![CDATA[<h1 id="调用微信授权接口后获取微信用户的信息时失败问题再现"><a href="#调用微信授权接口后获取微信用户的信息时失败问题再现" class="headerlink" title="调用微信授权接口后获取微信用户的信息时失败问题再现"></a>调用微信授权接口后获取微信用户的信息时失败问题再现</h1><pre><code>1  首次使用 scope=snsapi_base 进行网页授权2  拿到 code 后调用接口 https://api.weixin.qq.com/sns/oauth2/access_token?appid=&#123;0&#125;&amp;secret=&#123;1&#125;&amp;code=&#123;2&#125;&amp;grant_type=authorization_code3  根据上一步获取的 openid 和 access_token 调用接口 https://api.weixin.qq.com/sns/userinfo?access_token=&#123;0&#125;&amp;openid=&#123;1&#125;&amp;lang=zh_CN 获取用户基本信息4  获取失败：返回 &#123;&quot;errcode&quot;:48001,&quot;errmsg&quot;:&quot;api unauthorized, hints: [ req_id: 1QoCla0699ns81 ]&quot;&#125;</code></pre><p> 失败原因scope=snsapi_base 时，只能用于获取openid，不能获取用户的基本信息（获取用户信息，需要用户同意。<br> scope=snspai_base 授权时，并没有征求用户同意授权这一操作）</p><p> 说明：</p><pre><code> https://api.weixin.qq.com/sns/oauth2/access_token接口可以直接获取到用户的openid</code></pre><h1 id="支付不成功报返回如下错误chooseWXPay-fail-the-permission-value-is-offline-verifying"><a href="#支付不成功报返回如下错误chooseWXPay-fail-the-permission-value-is-offline-verifying" class="headerlink" title="支付不成功报返回如下错误chooseWXPay:fail, the permission value is offline verifying"></a>支付不成功报返回如下错误chooseWXPay:fail, the permission value is offline verifying</h1><p>是因为在微信支付控制台中没有配置JSAPI授权访问路径，配置正确路径即可，有一定延迟，需要等待生效（半小时左右）</p><h1 id="使用HTTPClient偶现-api-weixin-qq-com-443-failed-to-respond-问题"><a href="#使用HTTPClient偶现-api-weixin-qq-com-443-failed-to-respond-问题" class="headerlink" title="使用HTTPClient偶现 api.weixin.qq.com:443 failed to respond 问题"></a>使用HTTPClient偶现 api.weixin.qq.com:443 failed to respond 问题</h1><p>是因为 HTTPClient4.4版本的bug  升级至4.4.1即可</p>]]></content>
+    
+    
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>Tomcat问题总结</title>
+    <link href="/2020/09/02/Tomcat%E9%97%AE%E9%A2%98%E6%80%BB%E7%BB%93/"/>
+    <url>/2020/09/02/Tomcat%E9%97%AE%E9%A2%98%E6%80%BB%E7%BB%93/</url>
+    
+    <content type="html"><![CDATA[<h1 id="The-valid-characters-are-defined-in-RFC-7230-and-RFC-3986"><a href="#The-valid-characters-are-defined-in-RFC-7230-and-RFC-3986" class="headerlink" title="The valid characters are defined in RFC 7230 and RFC 3986"></a>The valid characters are defined in RFC 7230 and RFC 3986</h1><p>发生该问题说明Tomcat对Url参数进行了验证<br>解决方案：</p><p>在catalina.properties 文件中添加如下配置</p><pre><code class="hljs properties"><span class="hljs-meta">tomcat.util.http.parser.HttpParser.requestTargetAllow</span>=<span class="hljs-string">\|&#123;&#125;</span></code></pre>]]></content>
+    
+    
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>Nacos问题总结</title>
+    <link href="/2020/09/02/Nacos%E9%97%AE%E9%A2%98%E6%80%BB%E7%BB%93/"/>
+    <url>/2020/09/02/Nacos%E9%97%AE%E9%A2%98%E6%80%BB%E7%BB%93/</url>
+    
+    <content type="html"><![CDATA[<h1 id="Nacos默认不支持MySQL-8-0以上"><a href="#Nacos默认不支持MySQL-8-0以上" class="headerlink" title="Nacos默认不支持MySQL 8.0以上"></a>Nacos默认不支持MySQL 8.0以上</h1><p>解决方案： ①下载源码升级mysql版本重新编译软件<br>          ②使用MySQL5.7</p>]]></content>
+    
+    
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>Linux问题总结</title>
+    <link href="/2020/09/02/Linux%E9%97%AE%E9%A2%98%E6%80%BB%E7%BB%93-1/"/>
+    <url>/2020/09/02/Linux%E9%97%AE%E9%A2%98%E6%80%BB%E7%BB%93-1/</url>
+    
+    <content type="html"><![CDATA[<h1 id="Vmware虚拟机安装CentOSlinux最小化系统后无法上网"><a href="#Vmware虚拟机安装CentOSlinux最小化系统后无法上网" class="headerlink" title="Vmware虚拟机安装CentOSlinux最小化系统后无法上网"></a>Vmware虚拟机安装CentOSlinux最小化系统后无法上网</h1><p>需要修改网卡设置</p><pre><code class="hljs shell">cd /etc/sysconfig/network-scriptvim ifcfg-ens33（名称有可能不同）  修改 ONBOOT=yes</code></pre><h1 id="Vmware虚拟机安装后无法进行SSH远程访问（测试环境Ubuntu18）"><a href="#Vmware虚拟机安装后无法进行SSH远程访问（测试环境Ubuntu18）" class="headerlink" title="Vmware虚拟机安装后无法进行SSH远程访问（测试环境Ubuntu18）"></a>Vmware虚拟机安装后无法进行SSH远程访问（测试环境Ubuntu18）</h1><p>解决方法</p><pre><code>        ①检查防火墙设置并对端口进行放行        ②检查是否安装了ssh-server 如果没有安装则需要进行安装</code></pre>]]></content>
+    
+    
+    
+  </entry>
+  
+  
+  
+  
+</search>
