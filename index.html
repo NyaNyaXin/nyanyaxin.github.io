@@ -64,6 +64,42 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-Swagger-UI问题总结" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2020/09/02/Swagger-UI%E9%97%AE%E9%A2%98%E6%80%BB%E7%BB%93/" class="article-date">
+  <time datetime="2020-09-02T06:13:53.000Z" itemprop="datePublished">2020-09-02</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/09/02/Swagger-UI%E9%97%AE%E9%A2%98%E6%80%BB%E7%BB%93/">Swagger-UI问题总结</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://nyanyaxin.github.io/2020/09/02/Swagger-UI%E9%97%AE%E9%A2%98%E6%80%BB%E7%BB%93/" data-id="ckekzrcvj0007rkv64gv29ic1" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-SpringBoot开发问题总结" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2020/09/02/SpringBoot%E5%BC%80%E5%8F%91%E9%97%AE%E9%A2%98%E6%80%BB%E7%BB%93/" class="article-date">
@@ -87,19 +123,19 @@
     <div class="article-entry" itemprop="articleBody">
       
         <h1 id="拦截器配置不生效"><a href="#拦截器配置不生效" class="headerlink" title="拦截器配置不生效"></a>拦截器配置不生效</h1><p>配置拦截路径时不要包含上下文路径</p>
-<h1 id="拦截器和跨域同时配置会出现冲突的问题"><a href="#拦截器和跨域同时配置会出现冲突的问题" class="headerlink" title="拦截器和跨域同时配置会出现冲突的问题"></a>拦截器和跨域同时配置会出现冲突的问题</h1><p>解决方案：不使用下面的方式-</p>
-<img src="/.com//09/02/SpringBoot%E5%BC%80%E5%8F%91%E9%97%AE%E9%A2%98%E6%80%BB%E7%BB%93/AA.png" class title="This is an test image">
-<p>而使用这种方式</p>
-<img src="/.com//09/02/SpringBoot%E5%BC%80%E5%8F%91%E9%97%AE%E9%A2%98%E6%80%BB%E7%BB%93/BB.png" class title="This is an test image">
-
+<h1 id="拦截器和跨域同时配置会出现冲突的问题"><a href="#拦截器和跨域同时配置会出现冲突的问题" class="headerlink" title="拦截器和跨域同时配置会出现冲突的问题"></a>拦截器和跨域同时配置会出现冲突的问题</h1><p>解决方案：不使用下面的方式</p>
+<p><img src="/2020/09/02/SpringBoot%E5%BC%80%E5%8F%91%E9%97%AE%E9%A2%98%E6%80%BB%E7%BB%93/AA.png" alt="AA"></p>
+<p>而使用这种方式<br><img src="/2020/09/02/SpringBoot%E5%BC%80%E5%8F%91%E9%97%AE%E9%A2%98%E6%80%BB%E7%BB%93/BB.png" alt="BB"></p>
 <h1 id="SpringBoot分模块项目用-Autowired注解扫描不到部分包中的类"><a href="#SpringBoot分模块项目用-Autowired注解扫描不到部分包中的类" class="headerlink" title="SpringBoot分模块项目用@Autowired注解扫描不到部分包中的类"></a>SpringBoot分模块项目用@Autowired注解扫描不到部分包中的类</h1><p>尝试把SpringBoot启动类放在父级包中即可</p>
 <h1 id="SpringBoot中使用拦截器后swagger-ui无法访问"><a href="#SpringBoot中使用拦截器后swagger-ui无法访问" class="headerlink" title="SpringBoot中使用拦截器后swagger-ui无法访问"></a>SpringBoot中使用拦截器后swagger-ui无法访问</h1><p>在拦截器配置中加入如下配置即可</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">.excludePathPatterns(<span class="string">&quot;/swagger-resources/**&quot;</span>,<span class="string">&quot;/webjars/**&quot;</span>,<span class="string">&quot;/v2/**&quot;</span>,<span class="string">&quot;/swagger-ui.html/**&quot;</span>);</span><br></pre></td></tr></table></figure>
-<h1 id="SpringBoot2-0后classpath中的静态文件无法访问"><a href="#SpringBoot2-0后classpath中的静态文件无法访问" class="headerlink" title="SpringBoot2.0后classpath中的静态文件无法访问"></a>SpringBoot2.0后classpath中的静态文件无法访问</h1><img src="/.com//09/02/SpringBoot%E5%BC%80%E5%8F%91%E9%97%AE%E9%A2%98%E6%80%BB%E7%BB%93/CC.png" class title="This is an test image">
+
+<h1 id="SpringBoot2-0后classpath中的静态文件无法访问"><a href="#SpringBoot2-0后classpath中的静态文件无法访问" class="headerlink" title="SpringBoot2.0后classpath中的静态文件无法访问"></a>SpringBoot2.0后classpath中的静态文件无法访问</h1><p><img src="/2020/09/02/SpringBoot%E5%BC%80%E5%8F%91%E9%97%AE%E9%A2%98%E6%80%BB%E7%BB%93/CC.png" alt="CC"></p>
+
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://nyanyaxin.github.io/2020/09/02/SpringBoot%E5%BC%80%E5%8F%91%E9%97%AE%E9%A2%98%E6%80%BB%E7%BB%93/" data-id="ckekxaj0l0006sov65pqd0zi2" class="article-share-link">Share</a>
+      <a data-url="https://nyanyaxin.github.io/2020/09/02/SpringBoot%E5%BC%80%E5%8F%91%E9%97%AE%E9%A2%98%E6%80%BB%E7%BB%93/" data-id="ckekzrcvj0006rkv68zmn793a" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E9%97%AE%E9%A2%98%E6%80%BB%E7%BB%93/" rel="tag">问题总结</a></li></ul>
@@ -137,47 +173,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://nyanyaxin.github.io/2020/09/02/ElasticSearch%E9%97%AE%E9%A2%98%E6%80%BB%E7%BB%93/" data-id="ckekxig210007sov6gz5abwz3" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-Swagger-UI问题总结" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2020/09/02/Swagger-UI%E9%97%AE%E9%A2%98%E6%80%BB%E7%BB%93/" class="article-date">
-  <time datetime="2020-09-02T04:57:00.000Z" itemprop="datePublished">2020-09-02</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/09/02/Swagger-UI%E9%97%AE%E9%A2%98%E6%80%BB%E7%BB%93/">Swagger-UI问题总结</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="swagger-ui放到线上运行时测试的url仍显示127-0-0-1"><a href="#swagger-ui放到线上运行时测试的url仍显示127-0-0-1" class="headerlink" title="swagger-ui放到线上运行时测试的url仍显示127.0.0.1"></a>swagger-ui放到线上运行时测试的url仍显示127.0.0.1</h1><p>需要在配置中加入如下配置，设置指定域名即可</p>
-<p><img src="%5Cimages%5C%E5%9B%BE%E7%A4%BA.png" alt="upload successful"></p>
-<h1 id="报如下错误："><a href="#报如下错误：" class="headerlink" title="报如下错误："></a>报如下错误：</h1><p>java.lang.NumberFormatException:For input string:””</p>
-<p>该错误是参数说明配置不完全导致 ，需要给定 example属性一个默认值</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="https://nyanyaxin.github.io/2020/09/02/Swagger-UI%E9%97%AE%E9%A2%98%E6%80%BB%E7%BB%93/" data-id="ckekwruz60005sov6elvjdx0q" class="article-share-link">Share</a>
+      <a data-url="https://nyanyaxin.github.io/2020/09/02/ElasticSearch%E9%97%AE%E9%A2%98%E6%80%BB%E7%BB%93/" data-id="ckekzrcve0002rkv667euaezt" class="article-share-link">Share</a>
       
       
     </footer>
@@ -218,7 +214,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://nyanyaxin.github.io/2020/09/02/MySQL%E9%97%AE%E9%A2%98%E6%80%BB%E7%BB%93/" data-id="ckekwrhc60004sov6ayub4fhd" class="article-share-link">Share</a>
+      <a data-url="https://nyanyaxin.github.io/2020/09/02/MySQL%E9%97%AE%E9%A2%98%E6%80%BB%E7%BB%93/" data-id="ckekzrcvh0004rkv6eymhce20" class="article-share-link">Share</a>
       
       
     </footer>
@@ -263,7 +259,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://nyanyaxin.github.io/2020/09/02/%E5%BE%AE%E4%BF%A1%E5%BC%80%E5%8F%91%E9%97%AE%E9%A2%98%E6%80%BB%E7%BB%93/" data-id="ckekwr0wp0003sov67jlwfzwy" class="article-share-link">Share</a>
+      <a data-url="https://nyanyaxin.github.io/2020/09/02/%E5%BE%AE%E4%BF%A1%E5%BC%80%E5%8F%91%E9%97%AE%E9%A2%98%E6%80%BB%E7%BB%93/" data-id="ckekzrcvo000arkv63v98amjm" class="article-share-link">Share</a>
       
       
     </footer>
@@ -302,7 +298,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://nyanyaxin.github.io/2020/09/02/Tomcat%E9%97%AE%E9%A2%98%E6%80%BB%E7%BB%93/" data-id="ckekwqbgc0002sov6eas8dla7" class="article-share-link">Share</a>
+      <a data-url="https://nyanyaxin.github.io/2020/09/02/Tomcat%E9%97%AE%E9%A2%98%E6%80%BB%E7%BB%93/" data-id="ckekzrcvn0009rkv6fq7y8i3k" class="article-share-link">Share</a>
       
       
     </footer>
@@ -339,7 +335,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://nyanyaxin.github.io/2020/09/02/Nacos%E9%97%AE%E9%A2%98%E6%80%BB%E7%BB%93/" data-id="ckekwp8o20001sov62oft0zs7" class="article-share-link">Share</a>
+      <a data-url="https://nyanyaxin.github.io/2020/09/02/Nacos%E9%97%AE%E9%A2%98%E6%80%BB%E7%BB%93/" data-id="ckekzrcvi0005rkv63mgn0fb8" class="article-share-link">Share</a>
       
       
     </footer>
@@ -381,7 +377,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://nyanyaxin.github.io/2020/09/02/Linux%E9%97%AE%E9%A2%98%E6%80%BB%E7%BB%93-1/" data-id="ckekwanad0001okv66zbw1m5h" class="article-share-link">Share</a>
+      <a data-url="https://nyanyaxin.github.io/2020/09/02/Linux%E9%97%AE%E9%A2%98%E6%80%BB%E7%BB%93-1/" data-id="ckekzrcvg0003rkv6crxdhjjt" class="article-share-link">Share</a>
       
       
     </footer>
@@ -436,15 +432,15 @@
       <ul>
         
           <li>
+            <a href="/2020/09/02/Swagger-UI%E9%97%AE%E9%A2%98%E6%80%BB%E7%BB%93/">Swagger-UI问题总结</a>
+          </li>
+        
+          <li>
             <a href="/2020/09/02/SpringBoot%E5%BC%80%E5%8F%91%E9%97%AE%E9%A2%98%E6%80%BB%E7%BB%93/">SpringBoot开发问题总结</a>
           </li>
         
           <li>
             <a href="/2020/09/02/ElasticSearch%E9%97%AE%E9%A2%98%E6%80%BB%E7%BB%93/">ElasticSearch问题总结</a>
-          </li>
-        
-          <li>
-            <a href="/2020/09/02/Swagger-UI%E9%97%AE%E9%A2%98%E6%80%BB%E7%BB%93/">Swagger-UI问题总结</a>
           </li>
         
           <li>
