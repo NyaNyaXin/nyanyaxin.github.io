@@ -87,12 +87,15 @@
     <div class="article-entry" itemprop="articleBody">
       
         <h1 id="拦截器配置不生效"><a href="#拦截器配置不生效" class="headerlink" title="拦截器配置不生效"></a>拦截器配置不生效</h1><p>配置拦截路径时不要包含上下文路径</p>
-<h1 id="拦截器和跨域同时配置会出现冲突的问题"><a href="#拦截器和跨域同时配置会出现冲突的问题" class="headerlink" title="拦截器和跨域同时配置会出现冲突的问题"></a>拦截器和跨域同时配置会出现冲突的问题</h1><p>解决方案：不使用下面的方式-<br><img src="/.com//%5CSpringBoot%E5%BC%80%E5%8F%91%E9%97%AE%E9%A2%98%E6%80%BB%E7%BB%93%5CAA.png" alt="AA"><br>而使用这种方式<br><img src="/.com//%5CSpringBoot%E5%BC%80%E5%8F%91%E9%97%AE%E9%A2%98%E6%80%BB%E7%BB%93%5CBB.png" alt="BB"></p>
+<h1 id="拦截器和跨域同时配置会出现冲突的问题"><a href="#拦截器和跨域同时配置会出现冲突的问题" class="headerlink" title="拦截器和跨域同时配置会出现冲突的问题"></a>拦截器和跨域同时配置会出现冲突的问题</h1><p>解决方案：不使用下面的方式-</p>
+<img src="/.com//09/02/SpringBoot%E5%BC%80%E5%8F%91%E9%97%AE%E9%A2%98%E6%80%BB%E7%BB%93/AA.png" class title="This is an test image">
+<p>而使用这种方式</p>
+<img src="/.com//09/02/SpringBoot%E5%BC%80%E5%8F%91%E9%97%AE%E9%A2%98%E6%80%BB%E7%BB%93/BB.png" class title="This is an test image">
+
 <h1 id="SpringBoot分模块项目用-Autowired注解扫描不到部分包中的类"><a href="#SpringBoot分模块项目用-Autowired注解扫描不到部分包中的类" class="headerlink" title="SpringBoot分模块项目用@Autowired注解扫描不到部分包中的类"></a>SpringBoot分模块项目用@Autowired注解扫描不到部分包中的类</h1><p>尝试把SpringBoot启动类放在父级包中即可</p>
 <h1 id="SpringBoot中使用拦截器后swagger-ui无法访问"><a href="#SpringBoot中使用拦截器后swagger-ui无法访问" class="headerlink" title="SpringBoot中使用拦截器后swagger-ui无法访问"></a>SpringBoot中使用拦截器后swagger-ui无法访问</h1><p>在拦截器配置中加入如下配置即可</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">.excludePathPatterns(<span class="string">&quot;/swagger-resources/**&quot;</span>,<span class="string">&quot;/webjars/**&quot;</span>,<span class="string">&quot;/v2/**&quot;</span>,<span class="string">&quot;/swagger-ui.html/**&quot;</span>);</span><br></pre></td></tr></table></figure>
-<h1 id="SpringBoot2-0后classpath中的静态文件无法访问"><a href="#SpringBoot2-0后classpath中的静态文件无法访问" class="headerlink" title="SpringBoot2.0后classpath中的静态文件无法访问"></a>SpringBoot2.0后classpath中的静态文件无法访问</h1><p><img src="/.com//%5CSpringBoot%E5%BC%80%E5%8F%91%E9%97%AE%E9%A2%98%E6%80%BB%E7%BB%93%5CCC.png" alt="CC"></p>
-
+<h1 id="SpringBoot2-0后classpath中的静态文件无法访问"><a href="#SpringBoot2-0后classpath中的静态文件无法访问" class="headerlink" title="SpringBoot2.0后classpath中的静态文件无法访问"></a>SpringBoot2.0后classpath中的静态文件无法访问</h1><img src="/.com//09/02/SpringBoot%E5%BC%80%E5%8F%91%E9%97%AE%E9%A2%98%E6%80%BB%E7%BB%93/CC.png" class title="This is an test image">
       
     </div>
     <footer class="article-footer">
