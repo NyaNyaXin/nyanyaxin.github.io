@@ -5,16 +5,19 @@
   
 
   
-  <title>index | NyaC的技术博客</title>
+  <title>hexo开发问题总结 | NyaC的技术博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="index">
-<meta property="og:url" content="https://nyanyaxin.github.io/index/index.html">
+  <meta name="description" content="hexo插入图片无法显示 目录前多.com解决方案 123451. 将博客根目录下的文件 &#96;_config.yml&#96; 中的 &#96;post_asset_folder: false&#96; 改为 &#96;post_asset_folder: true&#96;。2. cmd 在博客根目录下 &#96;npm install hexo-asset-image -–save&amp;#9">
+<meta property="og:type" content="article">
+<meta property="og:title" content="hexo开发问题总结">
+<meta property="og:url" content="https://nyanyaxin.github.io/2020/09/02/hexo%E5%BC%80%E5%8F%91%E9%97%AE%E9%A2%98%E6%80%BB%E7%BB%93/index.html">
 <meta property="og:site_name" content="NyaC的技术博客">
+<meta property="og:description" content="hexo插入图片无法显示 目录前多.com解决方案 123451. 将博客根目录下的文件 &#96;_config.yml&#96; 中的 &#96;post_asset_folder: false&#96; 改为 &#96;post_asset_folder: true&#96;。2. cmd 在博客根目录下 &#96;npm install hexo-asset-image -–save&amp;#9">
 <meta property="og:locale" content="en_US">
-<meta property="article:published_time" content="2020-09-02T04:52:25.000Z">
-<meta property="article:modified_time" content="2020-09-02T04:52:25.543Z">
+<meta property="article:published_time" content="2020-09-02T06:31:00.000Z">
+<meta property="article:modified_time" content="2020-09-02T06:33:15.307Z">
 <meta property="article:author" content="John Doe">
+<meta property="article:tag" content="问题总结">
 <meta name="twitter:card" content="summary">
   
     <link rel="alternate" href="/atom.xml" title="NyaC的技术博客" type="application/atom+xml">
@@ -64,10 +67,10 @@
   </div>
 </header>
       <div class="outer">
-        <section id="main"><article id="page-" class="article article-type-page" itemscope itemprop="blogPost">
+        <section id="main"><article id="post-hexo开发问题总结" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/index/index.html" class="article-date">
-  <time datetime="2020-09-02T04:52:25.000Z" itemprop="datePublished">2020-09-02</time>
+    <a href="/2020/09/02/hexo%E5%BC%80%E5%8F%91%E9%97%AE%E9%A2%98%E6%80%BB%E7%BB%93/" class="article-date">
+  <time datetime="2020-09-02T06:31:00.000Z" itemprop="datePublished">2020-09-02</time>
 </a>
     
   </div>
@@ -78,7 +81,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      index
+      hexo开发问题总结
     </h1>
   
 
@@ -86,17 +89,30 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        
+        <h1 id="hexo插入图片无法显示-目录前多-com"><a href="#hexo插入图片无法显示-目录前多-com" class="headerlink" title="hexo插入图片无法显示 目录前多.com"></a>hexo插入图片无法显示 目录前多.com</h1><p>解决方案</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">1. 将博客根目录下的文件 &#96;_config.yml&#96; 中的 &#96;post_asset_folder: false&#96; 改为 &#96;post_asset_folder: true&#96;。</span><br><span class="line">2. cmd 在博客根目录下 &#96;npm install hexo-asset-image -–save&#96;。</span><br><span class="line">3. 将博客根目录下的文件 &#96;package.json&#96; 中的 &#96;&quot;hexo-asset-image&quot;: &quot;1.0.0&quot;&#96; 修改为 &#96;&quot;hexo-asset-image&quot;: &quot;0.0.3&quot;&#96;，在博客根目录下 cmd &#96;npm install&#96;；</span><br><span class="line">4. 修改 &#96;博客根目录\node_modules\hexo-asset-image\index.js&#96; 文件中的第 38 行为 &#96;var srcArray &#x3D; decodeURI(src).split(&#39;&#x2F;&#39;).filter(function(elem)&#123;&#96;；</span><br><span class="line">5. 在博客根目录下 cmd &#96;hexo clean &amp;&amp; hexo g &amp;&amp; hexo s&#96;，完成。</span><br></pre></td></tr></table></figure>
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://nyanyaxin.github.io/index/index.html" data-id="ckel08bih0000z8v6ekq38vrd" class="article-share-link">Share</a>
+      <a data-url="https://nyanyaxin.github.io/2020/09/02/hexo%E5%BC%80%E5%8F%91%E9%97%AE%E9%A2%98%E6%80%BB%E7%BB%93/" data-id="ckel08biv000az8v6egir54ub" class="article-share-link">Share</a>
       
       
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E9%97%AE%E9%A2%98%E6%80%BB%E7%BB%93/" rel="tag">问题总结</a></li></ul>
+
     </footer>
   </div>
   
     
+<nav id="article-nav">
+  
+  
+    <a href="/2020/09/02/Swagger-UI%E9%97%AE%E9%A2%98%E6%80%BB%E7%BB%93/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">Swagger-UI问题总结</div>
+    </a>
+  
+</nav>
+
   
 </article>
 

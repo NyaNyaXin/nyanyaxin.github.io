@@ -64,6 +64,45 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-hexo开发问题总结" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2020/09/02/hexo%E5%BC%80%E5%8F%91%E9%97%AE%E9%A2%98%E6%80%BB%E7%BB%93/" class="article-date">
+  <time datetime="2020-09-02T06:31:00.000Z" itemprop="datePublished">2020-09-02</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/09/02/hexo%E5%BC%80%E5%8F%91%E9%97%AE%E9%A2%98%E6%80%BB%E7%BB%93/">hexo开发问题总结</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="hexo插入图片无法显示-目录前多-com"><a href="#hexo插入图片无法显示-目录前多-com" class="headerlink" title="hexo插入图片无法显示 目录前多.com"></a>hexo插入图片无法显示 目录前多.com</h1><p>解决方案</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">1. 将博客根目录下的文件 &#96;_config.yml&#96; 中的 &#96;post_asset_folder: false&#96; 改为 &#96;post_asset_folder: true&#96;。</span><br><span class="line">2. cmd 在博客根目录下 &#96;npm install hexo-asset-image -–save&#96;。</span><br><span class="line">3. 将博客根目录下的文件 &#96;package.json&#96; 中的 &#96;&quot;hexo-asset-image&quot;: &quot;1.0.0&quot;&#96; 修改为 &#96;&quot;hexo-asset-image&quot;: &quot;0.0.3&quot;&#96;，在博客根目录下 cmd &#96;npm install&#96;；</span><br><span class="line">4. 修改 &#96;博客根目录\node_modules\hexo-asset-image\index.js&#96; 文件中的第 38 行为 &#96;var srcArray &#x3D; decodeURI(src).split(&#39;&#x2F;&#39;).filter(function(elem)&#123;&#96;；</span><br><span class="line">5. 在博客根目录下 cmd &#96;hexo clean &amp;&amp; hexo g &amp;&amp; hexo s&#96;，完成。</span><br></pre></td></tr></table></figure>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://nyanyaxin.github.io/2020/09/02/hexo%E5%BC%80%E5%8F%91%E9%97%AE%E9%A2%98%E6%80%BB%E7%BB%93/" data-id="ckel08biv000az8v6egir54ub" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E9%97%AE%E9%A2%98%E6%80%BB%E7%BB%93/" rel="tag">问题总结</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-Swagger-UI问题总结" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2020/09/02/Swagger-UI%E9%97%AE%E9%A2%98%E6%80%BB%E7%BB%93/" class="article-date">
@@ -94,7 +133,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://nyanyaxin.github.io/2020/09/02/Swagger-UI%E9%97%AE%E9%A2%98%E6%80%BB%E7%BB%93/" data-id="ckel004bo0007l4v60jmv1kyk" class="article-share-link">Share</a>
+      <a data-url="https://nyanyaxin.github.io/2020/09/02/Swagger-UI%E9%97%AE%E9%A2%98%E6%80%BB%E7%BB%93/" data-id="ckel08bir0007z8v6fi2n89na" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E9%97%AE%E9%A2%98%E6%80%BB%E7%BB%93/" rel="tag">问题总结</a></li></ul>
@@ -141,7 +180,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://nyanyaxin.github.io/2020/09/02/SpringBoot%E5%BC%80%E5%8F%91%E9%97%AE%E9%A2%98%E6%80%BB%E7%BB%93/" data-id="ckel004bn0006l4v6cmona8fs" class="article-share-link">Share</a>
+      <a data-url="https://nyanyaxin.github.io/2020/09/02/SpringBoot%E5%BC%80%E5%8F%91%E9%97%AE%E9%A2%98%E6%80%BB%E7%BB%93/" data-id="ckel08biq0006z8v6b74je3o1" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E9%97%AE%E9%A2%98%E6%80%BB%E7%BB%93/" rel="tag">问题总结</a></li></ul>
@@ -179,7 +218,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://nyanyaxin.github.io/2020/09/02/ElasticSearch%E9%97%AE%E9%A2%98%E6%80%BB%E7%BB%93/" data-id="ckel004bj0002l4v6f0wfdo64" class="article-share-link">Share</a>
+      <a data-url="https://nyanyaxin.github.io/2020/09/02/ElasticSearch%E9%97%AE%E9%A2%98%E6%80%BB%E7%BB%93/" data-id="ckel08bim0002z8v61nozdnop" class="article-share-link">Share</a>
       
       
     </footer>
@@ -220,7 +259,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://nyanyaxin.github.io/2020/09/02/MySQL%E9%97%AE%E9%A2%98%E6%80%BB%E7%BB%93/" data-id="ckel004bm0004l4v6hv7zfp4q" class="article-share-link">Share</a>
+      <a data-url="https://nyanyaxin.github.io/2020/09/02/MySQL%E9%97%AE%E9%A2%98%E6%80%BB%E7%BB%93/" data-id="ckel08bip0004z8v6hqky02zg" class="article-share-link">Share</a>
       
       
     </footer>
@@ -265,7 +304,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://nyanyaxin.github.io/2020/09/02/%E5%BE%AE%E4%BF%A1%E5%BC%80%E5%8F%91%E9%97%AE%E9%A2%98%E6%80%BB%E7%BB%93/" data-id="ckel004bw000dl4v68an7ceme" class="article-share-link">Share</a>
+      <a data-url="https://nyanyaxin.github.io/2020/09/02/%E5%BE%AE%E4%BF%A1%E5%BC%80%E5%8F%91%E9%97%AE%E9%A2%98%E6%80%BB%E7%BB%93/" data-id="ckel08bj0000fz8v64bn8bupb" class="article-share-link">Share</a>
       
       
     </footer>
@@ -304,7 +343,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://nyanyaxin.github.io/2020/09/02/Tomcat%E9%97%AE%E9%A2%98%E6%80%BB%E7%BB%93/" data-id="ckel004bv000cl4v67iyrf89t" class="article-share-link">Share</a>
+      <a data-url="https://nyanyaxin.github.io/2020/09/02/Tomcat%E9%97%AE%E9%A2%98%E6%80%BB%E7%BB%93/" data-id="ckel08biu0009z8v637mmhugm" class="article-share-link">Share</a>
       
       
     </footer>
@@ -341,7 +380,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://nyanyaxin.github.io/2020/09/02/Nacos%E9%97%AE%E9%A2%98%E6%80%BB%E7%BB%93/" data-id="ckel004bn0005l4v6c5ga0ewj" class="article-share-link">Share</a>
+      <a data-url="https://nyanyaxin.github.io/2020/09/02/Nacos%E9%97%AE%E9%A2%98%E6%80%BB%E7%BB%93/" data-id="ckel08biq0005z8v67vqggbs6" class="article-share-link">Share</a>
       
       
     </footer>
@@ -383,7 +422,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://nyanyaxin.github.io/2020/09/02/Linux%E9%97%AE%E9%A2%98%E6%80%BB%E7%BB%93-1/" data-id="ckel004bl0003l4v6egw6gz9b" class="article-share-link">Share</a>
+      <a data-url="https://nyanyaxin.github.io/2020/09/02/Linux%E9%97%AE%E9%A2%98%E6%80%BB%E7%BB%93-1/" data-id="ckel08bio0003z8v68l2nf6ds" class="article-share-link">Share</a>
       
       
     </footer>
@@ -438,6 +477,10 @@
       <ul>
         
           <li>
+            <a href="/2020/09/02/hexo%E5%BC%80%E5%8F%91%E9%97%AE%E9%A2%98%E6%80%BB%E7%BB%93/">hexo开发问题总结</a>
+          </li>
+        
+          <li>
             <a href="/2020/09/02/Swagger-UI%E9%97%AE%E9%A2%98%E6%80%BB%E7%BB%93/">Swagger-UI问题总结</a>
           </li>
         
@@ -451,10 +494,6 @@
         
           <li>
             <a href="/2020/09/02/MySQL%E9%97%AE%E9%A2%98%E6%80%BB%E7%BB%93/">MySQL问题总结</a>
-          </li>
-        
-          <li>
-            <a href="/2020/09/02/%E5%BE%AE%E4%BF%A1%E5%BC%80%E5%8F%91%E9%97%AE%E9%A2%98%E6%80%BB%E7%BB%93/">微信开发问题总结</a>
           </li>
         
       </ul>
