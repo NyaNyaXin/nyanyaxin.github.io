@@ -5,17 +5,17 @@
   
 
   
-  <title>Linux问题总结 | Hexo</title>
+  <title>微信开发问题总结 | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="Vmware虚拟机安装CentOSlinux最小化系统后无法上网需要修改网卡设置 12cd &#x2F;etc&#x2F;sysconfig&#x2F;network-scriptvim ifcfg-ens33（名称有可能不同）  修改 ONBOOT&#x3D;yes  Vmware虚拟机安装后无法进行SSH远程访问（测试环境Ubuntu18）解决方法         ①检查防火墙设置并对端口进行放行         ②检查是否安装了s">
+  <meta name="description" content="调用微信授权接口后获取微信用户的信息时失败问题再现1  首次使用 scope&#x3D;snsapi_base 进行网页授权 2  拿到 code 后调用接口 https:&#x2F;&#x2F;api.weixin.qq.com&#x2F;sns&#x2F;oauth2&#x2F;access_token?appid&#x3D;&amp;#123;0&amp;#125;&amp;secret&#x3D;&amp;#123;1&amp;#125;&amp;code&#x3D;&amp;#123;2&amp;#125;&amp;gra">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Linux问题总结">
-<meta property="og:url" content="http://example.com/2020/09/02/Linux%E9%97%AE%E9%A2%98%E6%80%BB%E7%BB%93-1/index.html">
+<meta property="og:title" content="微信开发问题总结">
+<meta property="og:url" content="http://example.com/2020/09/02/%E5%BE%AE%E4%BF%A1%E5%BC%80%E5%8F%91%E9%97%AE%E9%A2%98%E6%80%BB%E7%BB%93/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="Vmware虚拟机安装CentOSlinux最小化系统后无法上网需要修改网卡设置 12cd &#x2F;etc&#x2F;sysconfig&#x2F;network-scriptvim ifcfg-ens33（名称有可能不同）  修改 ONBOOT&#x3D;yes  Vmware虚拟机安装后无法进行SSH远程访问（测试环境Ubuntu18）解决方法         ①检查防火墙设置并对端口进行放行         ②检查是否安装了s">
+<meta property="og:description" content="调用微信授权接口后获取微信用户的信息时失败问题再现1  首次使用 scope&#x3D;snsapi_base 进行网页授权 2  拿到 code 后调用接口 https:&#x2F;&#x2F;api.weixin.qq.com&#x2F;sns&#x2F;oauth2&#x2F;access_token?appid&#x3D;&amp;#123;0&amp;#125;&amp;secret&#x3D;&amp;#123;1&amp;#125;&amp;code&#x3D;&amp;#123;2&amp;#125;&amp;gra">
 <meta property="og:locale" content="en_US">
-<meta property="article:published_time" content="2020-09-02T04:43:35.000Z">
-<meta property="article:modified_time" content="2020-09-02T04:43:44.725Z">
+<meta property="article:published_time" content="2020-09-02T04:56:12.000Z">
+<meta property="article:modified_time" content="2020-09-02T04:56:14.889Z">
 <meta property="article:author" content="John Doe">
 <meta name="twitter:card" content="summary">
   
@@ -66,10 +66,10 @@
   </div>
 </header>
       <div class="outer">
-        <section id="main"><article id="post-Linux问题总结-1" class="article article-type-post" itemscope itemprop="blogPost">
+        <section id="main"><article id="post-微信开发问题总结" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/2020/09/02/Linux%E9%97%AE%E9%A2%98%E6%80%BB%E7%BB%93-1/" class="article-date">
-  <time datetime="2020-09-02T04:43:35.000Z" itemprop="datePublished">2020-09-02</time>
+    <a href="/2020/09/02/%E5%BE%AE%E4%BF%A1%E5%BC%80%E5%8F%91%E9%97%AE%E9%A2%98%E6%80%BB%E7%BB%93/" class="article-date">
+  <time datetime="2020-09-02T04:56:12.000Z" itemprop="datePublished">2020-09-02</time>
 </a>
     
   </div>
@@ -80,7 +80,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      Linux问题总结
+      微信开发问题总结
     </h1>
   
 
@@ -88,17 +88,20 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="Vmware虚拟机安装CentOSlinux最小化系统后无法上网"><a href="#Vmware虚拟机安装CentOSlinux最小化系统后无法上网" class="headerlink" title="Vmware虚拟机安装CentOSlinux最小化系统后无法上网"></a>Vmware虚拟机安装CentOSlinux最小化系统后无法上网</h1><p>需要修改网卡设置</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">cd /etc/sysconfig/network-script</span><br><span class="line">vim ifcfg-ens33（名称有可能不同）  修改 ONBOOT=yes</span><br></pre></td></tr></table></figure>
-
-<h1 id="Vmware虚拟机安装后无法进行SSH远程访问（测试环境Ubuntu18）"><a href="#Vmware虚拟机安装后无法进行SSH远程访问（测试环境Ubuntu18）" class="headerlink" title="Vmware虚拟机安装后无法进行SSH远程访问（测试环境Ubuntu18）"></a>Vmware虚拟机安装后无法进行SSH远程访问（测试环境Ubuntu18）</h1><p>解决方法</p>
-<pre><code>        ①检查防火墙设置并对端口进行放行
-        ②检查是否安装了ssh-server 如果没有安装则需要进行安装</code></pre>
+        <h1 id="调用微信授权接口后获取微信用户的信息时失败问题再现"><a href="#调用微信授权接口后获取微信用户的信息时失败问题再现" class="headerlink" title="调用微信授权接口后获取微信用户的信息时失败问题再现"></a>调用微信授权接口后获取微信用户的信息时失败问题再现</h1><pre><code>1  首次使用 scope=snsapi_base 进行网页授权
+2  拿到 code 后调用接口 https://api.weixin.qq.com/sns/oauth2/access_token?appid=&#123;0&#125;&amp;secret=&#123;1&#125;&amp;code=&#123;2&#125;&amp;grant_type=authorization_code
+3  根据上一步获取的 openid 和 access_token 调用接口 https://api.weixin.qq.com/sns/userinfo?access_token=&#123;0&#125;&amp;openid=&#123;1&#125;&amp;lang=zh_CN 获取用户基本信息
+4  获取失败：返回 &#123;&quot;errcode&quot;:48001,&quot;errmsg&quot;:&quot;api unauthorized, hints: [ req_id: 1QoCla0699ns81 ]&quot;&#125;</code></pre>
+<p> 失败原因scope=snsapi_base 时，只能用于获取openid，不能获取用户的基本信息（获取用户信息，需要用户同意。<br> scope=snspai_base 授权时，并没有征求用户同意授权这一操作）</p>
+<p> 说明：</p>
+<pre><code> https://api.weixin.qq.com/sns/oauth2/access_token接口可以直接获取到用户的openid</code></pre>
+<h1 id="支付不成功报返回如下错误chooseWXPay-fail-the-permission-value-is-offline-verifying"><a href="#支付不成功报返回如下错误chooseWXPay-fail-the-permission-value-is-offline-verifying" class="headerlink" title="支付不成功报返回如下错误chooseWXPay:fail, the permission value is offline verifying"></a>支付不成功报返回如下错误chooseWXPay:fail, the permission value is offline verifying</h1><p>是因为在微信支付控制台中没有配置JSAPI授权访问路径，配置正确路径即可，有一定延迟，需要等待生效（半小时左右）</p>
+<h1 id="使用HTTPClient偶现-api-weixin-qq-com-443-failed-to-respond-问题"><a href="#使用HTTPClient偶现-api-weixin-qq-com-443-failed-to-respond-问题" class="headerlink" title="使用HTTPClient偶现 api.weixin.qq.com:443 failed to respond 问题"></a>使用HTTPClient偶现 api.weixin.qq.com:443 failed to respond 问题</h1><p>是因为 HTTPClient4.4版本的bug  升级至4.4.1即可</p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2020/09/02/Linux%E9%97%AE%E9%A2%98%E6%80%BB%E7%BB%93-1/" data-id="ckekwanad0001okv66zbw1m5h" class="article-share-link">Share</a>
+      <a data-url="http://example.com/2020/09/02/%E5%BE%AE%E4%BF%A1%E5%BC%80%E5%8F%91%E9%97%AE%E9%A2%98%E6%80%BB%E7%BB%93/" data-id="ckekwr0wp0003sov67jlwfzwy" class="article-share-link">Share</a>
       
       
     </footer>
@@ -107,15 +110,20 @@
     
 <nav id="article-nav">
   
-    <a href="/2020/09/02/Nacos%E9%97%AE%E9%A2%98%E6%80%BB%E7%BB%93/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2020/09/02/MySQL%E9%97%AE%E9%A2%98%E6%80%BB%E7%BB%93/" id="article-nav-newer" class="article-nav-link-wrap">
       <strong class="article-nav-caption">Newer</strong>
       <div class="article-nav-title">
         
-          Nacos问题总结
+          MySQL问题总结
         
       </div>
     </a>
   
+  
+    <a href="/2020/09/02/Tomcat%E9%97%AE%E9%A2%98%E6%80%BB%E7%BB%93/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">Tomcat问题总结</div>
+    </a>
   
 </nav>
 

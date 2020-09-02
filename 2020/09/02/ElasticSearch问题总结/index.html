@@ -5,17 +5,17 @@
   
 
   
-  <title>Linux问题总结 | Hexo</title>
+  <title>ElasticSearch问题总结 | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="Vmware虚拟机安装CentOSlinux最小化系统后无法上网需要修改网卡设置 12cd &#x2F;etc&#x2F;sysconfig&#x2F;network-scriptvim ifcfg-ens33（名称有可能不同）  修改 ONBOOT&#x3D;yes  Vmware虚拟机安装后无法进行SSH远程访问（测试环境Ubuntu18）解决方法         ①检查防火墙设置并对端口进行放行         ②检查是否安装了s">
+  <meta name="description" content="1.从5.0开始，Elasticsearch的docker镜像不再支持开箱即用集群模式  ，需要在启动时加入一下参数进行设置docker run -d –name elas elasticsearch -Etransport.host&#x3D;0.0.0.0 -Ediscovery.zen.minimum_master_nodes&#x3D;1设置后会报一个错误[1]: max virtual memory are">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Linux问题总结">
-<meta property="og:url" content="http://example.com/2020/09/02/Linux%E9%97%AE%E9%A2%98%E6%80%BB%E7%BB%93-1/index.html">
+<meta property="og:title" content="ElasticSearch问题总结">
+<meta property="og:url" content="http://example.com/2020/09/02/ElasticSearch%E9%97%AE%E9%A2%98%E6%80%BB%E7%BB%93/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="Vmware虚拟机安装CentOSlinux最小化系统后无法上网需要修改网卡设置 12cd &#x2F;etc&#x2F;sysconfig&#x2F;network-scriptvim ifcfg-ens33（名称有可能不同）  修改 ONBOOT&#x3D;yes  Vmware虚拟机安装后无法进行SSH远程访问（测试环境Ubuntu18）解决方法         ①检查防火墙设置并对端口进行放行         ②检查是否安装了s">
+<meta property="og:description" content="1.从5.0开始，Elasticsearch的docker镜像不再支持开箱即用集群模式  ，需要在启动时加入一下参数进行设置docker run -d –name elas elasticsearch -Etransport.host&#x3D;0.0.0.0 -Ediscovery.zen.minimum_master_nodes&#x3D;1设置后会报一个错误[1]: max virtual memory are">
 <meta property="og:locale" content="en_US">
-<meta property="article:published_time" content="2020-09-02T04:43:35.000Z">
-<meta property="article:modified_time" content="2020-09-02T04:43:44.725Z">
+<meta property="article:published_time" content="2020-09-02T05:17:30.000Z">
+<meta property="article:modified_time" content="2020-09-02T05:17:31.557Z">
 <meta property="article:author" content="John Doe">
 <meta name="twitter:card" content="summary">
   
@@ -66,10 +66,10 @@
   </div>
 </header>
       <div class="outer">
-        <section id="main"><article id="post-Linux问题总结-1" class="article article-type-post" itemscope itemprop="blogPost">
+        <section id="main"><article id="post-ElasticSearch问题总结" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/2020/09/02/Linux%E9%97%AE%E9%A2%98%E6%80%BB%E7%BB%93-1/" class="article-date">
-  <time datetime="2020-09-02T04:43:35.000Z" itemprop="datePublished">2020-09-02</time>
+    <a href="/2020/09/02/ElasticSearch%E9%97%AE%E9%A2%98%E6%80%BB%E7%BB%93/" class="article-date">
+  <time datetime="2020-09-02T05:17:30.000Z" itemprop="datePublished">2020-09-02</time>
 </a>
     
   </div>
@@ -80,7 +80,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      Linux问题总结
+      ElasticSearch问题总结
     </h1>
   
 
@@ -88,17 +88,11 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="Vmware虚拟机安装CentOSlinux最小化系统后无法上网"><a href="#Vmware虚拟机安装CentOSlinux最小化系统后无法上网" class="headerlink" title="Vmware虚拟机安装CentOSlinux最小化系统后无法上网"></a>Vmware虚拟机安装CentOSlinux最小化系统后无法上网</h1><p>需要修改网卡设置</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">cd /etc/sysconfig/network-script</span><br><span class="line">vim ifcfg-ens33（名称有可能不同）  修改 ONBOOT=yes</span><br></pre></td></tr></table></figure>
-
-<h1 id="Vmware虚拟机安装后无法进行SSH远程访问（测试环境Ubuntu18）"><a href="#Vmware虚拟机安装后无法进行SSH远程访问（测试环境Ubuntu18）" class="headerlink" title="Vmware虚拟机安装后无法进行SSH远程访问（测试环境Ubuntu18）"></a>Vmware虚拟机安装后无法进行SSH远程访问（测试环境Ubuntu18）</h1><p>解决方法</p>
-<pre><code>        ①检查防火墙设置并对端口进行放行
-        ②检查是否安装了ssh-server 如果没有安装则需要进行安装</code></pre>
-
+        <h1 id="1-从5-0开始，Elasticsearch的docker镜像不再支持开箱即用集群模式-，需要在启动时加入一下参数进行设置"><a href="#1-从5-0开始，Elasticsearch的docker镜像不再支持开箱即用集群模式-，需要在启动时加入一下参数进行设置" class="headerlink" title="1.从5.0开始，Elasticsearch的docker镜像不再支持开箱即用集群模式  ，需要在启动时加入一下参数进行设置"></a>1.从5.0开始，Elasticsearch的docker镜像不再支持开箱即用集群模式  ，需要在启动时加入一下参数进行设置</h1><h2 id="docker-run-d-–name-elas-elasticsearch-Etransport-host-0-0-0-0-Ediscovery-zen-minimum-master-nodes-1"><a href="#docker-run-d-–name-elas-elasticsearch-Etransport-host-0-0-0-0-Ediscovery-zen-minimum-master-nodes-1" class="headerlink" title="docker run -d –name elas elasticsearch -Etransport.host=0.0.0.0 -Ediscovery.zen.minimum_master_nodes=1"></a>docker run -d –name elas elasticsearch -Etransport.host=0.0.0.0 -Ediscovery.zen.minimum_master_nodes=1</h2><h2 id="设置后会报一个错误-1-max-virtual-memory-areas-vm-max-map-count-65530-is-too-low-increase-to-at-least-262144"><a href="#设置后会报一个错误-1-max-virtual-memory-areas-vm-max-map-count-65530-is-too-low-increase-to-at-least-262144" class="headerlink" title="设置后会报一个错误[1]: max virtual memory areas vm.max_map_count [65530] is too low, increase to at least [262144]"></a>设置后会报一个错误[1]: max virtual memory areas vm.max_map_count [65530] is too low, increase to at least [262144]</h2><h3 id="需要在Linux下修改虚拟机内存大小限制"><a href="#需要在Linux下修改虚拟机内存大小限制" class="headerlink" title="需要在Linux下修改虚拟机内存大小限制"></a>需要在Linux下修改虚拟机内存大小限制</h3><h3 id="sysctl-w-vm-max-map-count-262144"><a href="#sysctl-w-vm-max-map-count-262144" class="headerlink" title="sysctl -w vm.max_map_count=262144"></a>sysctl -w vm.max_map_count=262144</h3>
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2020/09/02/Linux%E9%97%AE%E9%A2%98%E6%80%BB%E7%BB%93-1/" data-id="ckekwanad0001okv66zbw1m5h" class="article-share-link">Share</a>
+      <a data-url="http://example.com/2020/09/02/ElasticSearch%E9%97%AE%E9%A2%98%E6%80%BB%E7%BB%93/" data-id="ckekxig210007sov6gz5abwz3" class="article-share-link">Share</a>
       
       
     </footer>
@@ -107,15 +101,20 @@
     
 <nav id="article-nav">
   
-    <a href="/2020/09/02/Nacos%E9%97%AE%E9%A2%98%E6%80%BB%E7%BB%93/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2020/09/02/SpringBoot%E5%BC%80%E5%8F%91%E9%97%AE%E9%A2%98%E6%80%BB%E7%BB%93/" id="article-nav-newer" class="article-nav-link-wrap">
       <strong class="article-nav-caption">Newer</strong>
       <div class="article-nav-title">
         
-          Nacos问题总结
+          SpringBoot开发问题总结
         
       </div>
     </a>
   
+  
+    <a href="/2020/09/02/Swagger-UI%E9%97%AE%E9%A2%98%E6%80%BB%E7%BB%93/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">Swagger-UI问题总结</div>
+    </a>
   
 </nav>
 
