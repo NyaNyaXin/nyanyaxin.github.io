@@ -1,0 +1,786 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=&#34;auto&#34;>
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/favicon.png">
+  <link rel="icon" type="image/png" href="/img/favicon.png">
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="description" content="">
+  <meta name="author" content="John Doe">
+  <meta name="keywords" content="">
+  <title>Collections 工具类和 Arrays 工具类常见方法 - NyaC的技术博客</title>
+
+  <link  rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/4.4.1/css/bootstrap.min.css" />
+
+
+  <link  rel="stylesheet" href="https://cdn.staticfile.org/github-markdown-css/4.0.0/github-markdown.min.css" />
+  <link  rel="stylesheet" href="/lib/hint/hint.min.css" />
+
+  
+    
+    <link  rel="stylesheet" href="https://cdn.staticfile.org/highlight.js/10.0.0/styles/github-gist.min.css" />
+  
+
+  
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_6peoq002giu.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_pjno9b9zyxs.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+<!-- 自定义样式保持在最底部 -->
+
+
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+<meta name="generator" content="Hexo 5.1.1"></head>
+
+
+<body>
+  <header style="height: 70vh;">
+    <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand"
+       href="/">&nbsp;<strong>NyaC的技术博客</strong>&nbsp;</a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/">
+                <i class="iconfont icon-home-fill"></i>
+                首页
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/">
+                <i class="iconfont icon-archive-fill"></i>
+                归档
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/">
+                <i class="iconfont icon-category-fill"></i>
+                分类
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/">
+                <i class="iconfont icon-tags-fill"></i>
+                标签
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/">
+                <i class="iconfont icon-user-fill"></i>
+                关于
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" data-toggle="modal" data-target="#modalSearch">&nbsp;<i
+                class="iconfont icon-search"></i>&nbsp;</a>
+          </li>
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" href="javascript:">&nbsp;<i
+                class="iconfont icon-dark" id="color-toggle-icon"></i>&nbsp;</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+    <div class="banner intro-2" id="background" parallax=true
+         style="background: url('/img/default.png') no-repeat center center;
+           background-size: cover;">
+      <div class="full-bg-img">
+        <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+          <div class="container page-header text-center fade-in-up">
+            <span class="h2" id="subtitle">
+              
+            </span>
+
+            
+              
+  <div class="mt-3 post-meta">
+    <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+    <time datetime="2020-09-04 23:00" pubdate>
+      2020年9月4日 晚上
+    </time>
+  </div>
+
+
+<div class="mt-1">
+  
+    
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-chart"></i>
+      2.6k 字
+    </span>
+  
+
+  
+    
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-clock-fill"></i>
+      
+      
+      39
+       分钟
+    </span>
+  
+
+  
+  
+</div>
+
+            
+          </div>
+
+          
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid">
+  <div class="row">
+    <div class="d-none d-lg-block col-lg-2"></div>
+    <div class="col-lg-8 nopadding-md">
+      <div class="container nopadding-md" id="board-ctn">
+        <div class="py-5" id="board">
+          <article class="post-content mx-auto" id="post">
+            <!-- SEO header -->
+            <h1 style="display: none">Collections 工具类和 Arrays 工具类常见方法</h1>
+            
+            <div class="markdown-body" id="post-body">
+              <h3 id="转自JavaGuide：https-gitee-com-SnailClimb-JavaGuide-blob-master-docs-java-basic-Arrays-CollectionsCommonMethods-md"><a href="#转自JavaGuide：https-gitee-com-SnailClimb-JavaGuide-blob-master-docs-java-basic-Arrays-CollectionsCommonMethods-md" class="headerlink" title="转自JavaGuide：https://gitee.com/SnailClimb/JavaGuide/blob/master/docs/java/basic/Arrays,CollectionsCommonMethods.md"></a>转自JavaGuide：<a target="_blank" rel="noopener" href="https://gitee.com/SnailClimb/JavaGuide/blob/master/docs/java/basic/Arrays,CollectionsCommonMethods.md">https://gitee.com/SnailClimb/JavaGuide/blob/master/docs/java/basic/Arrays,CollectionsCommonMethods.md</a></h3><!-- TOC -->
+
+<ul>
+<li><a href="#collections-%E5%B7%A5%E5%85%B7%E7%B1%BB%E5%92%8C-arrays-%E5%B7%A5%E5%85%B7%E7%B1%BB%E5%B8%B8%E8%A7%81%E6%96%B9%E6%B3%95">Collections 工具类和 Arrays 工具类常见方法</a><ul>
+<li><a href="#collections">Collections</a><ul>
+<li><a href="#%E6%8E%92%E5%BA%8F%E6%93%8D%E4%BD%9C">排序操作</a></li>
+<li><a href="#%E6%9F%A5%E6%89%BE%E6%9B%BF%E6%8D%A2%E6%93%8D%E4%BD%9C">查找,替换操作</a></li>
+<li><a href="#%E5%90%8C%E6%AD%A5%E6%8E%A7%E5%88%B6">同步控制</a></li>
+</ul>
+</li>
+<li><a href="#arrays%E7%B1%BB%E7%9A%84%E5%B8%B8%E8%A7%81%E6%93%8D%E4%BD%9C">Arrays类的常见操作</a><ul>
+<li><a href="#%E6%8E%92%E5%BA%8F--sort">排序 : <code>sort()</code></a></li>
+<li><a href="#%E6%9F%A5%E6%89%BE--binarysearch">查找 : <code>binarySearch()</code></a></li>
+<li><a href="#%E6%AF%94%E8%BE%83-equals">比较: <code>equals()</code></a></li>
+<li><a href="#%E5%A1%AB%E5%85%85--fill">填充 : <code>fill()</code></a></li>
+<li><a href="#%E8%BD%AC%E5%88%97%E8%A1%A8-aslist">转列表 <code>asList()</code></a></li>
+<li><a href="#%E8%BD%AC%E5%AD%97%E7%AC%A6%E4%B8%B2-tostring">转字符串 <code>toString()</code></a></li>
+<li><a href="#%E5%A4%8D%E5%88%B6-copyof">复制 <code>copyOf()</code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<!-- /TOC -->
+<h1 id="Collections-工具类和-Arrays-工具类常见方法"><a href="#Collections-工具类和-Arrays-工具类常见方法" class="headerlink" title="Collections 工具类和 Arrays 工具类常见方法"></a>Collections 工具类和 Arrays 工具类常见方法</h1><h2 id="Collections"><a href="#Collections" class="headerlink" title="Collections"></a>Collections</h2><p>Collections 工具类常用方法:</p>
+<ol>
+<li>排序</li>
+<li>查找,替换操作</li>
+<li>同步控制(不推荐，需要线程安全的集合类型时请考虑使用 JUC 包下的并发集合)</li>
+</ol>
+<h3 id="排序操作"><a href="#排序操作" class="headerlink" title="排序操作"></a>排序操作</h3><pre><code class="hljs java"><span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">reverse</span><span class="hljs-params">(List list)</span><span class="hljs-comment">//反转</span></span>
+<span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">shuffle</span><span class="hljs-params">(List list)</span><span class="hljs-comment">//随机排序</span></span>
+<span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">sort</span><span class="hljs-params">(List list)</span><span class="hljs-comment">//按自然排序的升序排序</span></span>
+<span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">sort</span><span class="hljs-params">(List list, Comparator c)</span><span class="hljs-comment">//定制排序，由Comparator控制排序逻辑</span></span>
+<span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">swap</span><span class="hljs-params">(List list, <span class="hljs-keyword">int</span> i , <span class="hljs-keyword">int</span> j)</span><span class="hljs-comment">//交换两个索引位置的元素</span></span>
+<span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">rotate</span><span class="hljs-params">(List list, <span class="hljs-keyword">int</span> distance)</span><span class="hljs-comment">//旋转。当distance为正数时，将list后distance个元素整体移到前面。当distance为负数时，将 list的前distance个元素整体移到后面。</span></span></code></pre>
+
+<p><strong>示例代码:</strong></p>
+<pre><code class="hljs java">   ArrayList&lt;Integer&gt; arrayList = <span class="hljs-keyword">new</span> ArrayList&lt;Integer&gt;();
+arrayList.add(-<span class="hljs-number">1</span>);
+arrayList.add(<span class="hljs-number">3</span>);
+arrayList.add(<span class="hljs-number">3</span>);
+arrayList.add(-<span class="hljs-number">5</span>);
+arrayList.add(<span class="hljs-number">7</span>);
+arrayList.add(<span class="hljs-number">4</span>);
+arrayList.add(-<span class="hljs-number">9</span>);
+arrayList.add(-<span class="hljs-number">7</span>);
+System.out.println(<span class="hljs-string">&quot;原始数组:&quot;</span>);
+System.out.println(arrayList);
+<span class="hljs-comment">// void reverse(List list)：反转</span>
+Collections.reverse(arrayList);
+System.out.println(<span class="hljs-string">&quot;Collections.reverse(arrayList):&quot;</span>);
+System.out.println(arrayList);
+
+
+Collections.rotate(arrayList, <span class="hljs-number">4</span>);
+System.out.println(<span class="hljs-string">&quot;Collections.rotate(arrayList, 4):&quot;</span>);
+System.out.println(arrayList);
+
+<span class="hljs-comment">// void sort(List list),按自然排序的升序排序</span>
+Collections.sort(arrayList);
+System.out.println(<span class="hljs-string">&quot;Collections.sort(arrayList):&quot;</span>);
+System.out.println(arrayList);
+
+<span class="hljs-comment">// void shuffle(List list),随机排序</span>
+Collections.shuffle(arrayList);
+System.out.println(<span class="hljs-string">&quot;Collections.shuffle(arrayList):&quot;</span>);
+System.out.println(arrayList);
+
+<span class="hljs-comment">// void swap(List list, int i , int j),交换两个索引位置的元素</span>
+Collections.swap(arrayList, <span class="hljs-number">2</span>, <span class="hljs-number">5</span>);
+System.out.println(<span class="hljs-string">&quot;Collections.swap(arrayList, 2, 5):&quot;</span>);
+System.out.println(arrayList);
+
+<span class="hljs-comment">// 定制排序的用法</span>
+Collections.sort(arrayList, <span class="hljs-keyword">new</span> Comparator&lt;Integer&gt;() &#123;
+
+	<span class="hljs-meta">@Override</span>
+	<span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">int</span> <span class="hljs-title">compare</span><span class="hljs-params">(Integer o1, Integer o2)</span> </span>&#123;
+		<span class="hljs-keyword">return</span> o2.compareTo(o1);
+	&#125;
+&#125;);
+System.out.println(<span class="hljs-string">&quot;定制排序后：&quot;</span>);
+System.out.println(arrayList);</code></pre>
+
+<h3 id="查找-替换操作"><a href="#查找-替换操作" class="headerlink" title="查找,替换操作"></a>查找,替换操作</h3><pre><code class="hljs java"><span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">binarySearch</span><span class="hljs-params">(List list, Object key)</span><span class="hljs-comment">//对List进行二分查找，返回索引，注意List必须是有序的</span></span>
+<span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">max</span><span class="hljs-params">(Collection coll)</span><span class="hljs-comment">//根据元素的自然顺序，返回最大的元素。 类比int min(Collection coll)</span></span>
+<span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">max</span><span class="hljs-params">(Collection coll, Comparator c)</span><span class="hljs-comment">//根据定制排序，返回最大元素，排序规则由Comparatator类控制。类比int min(Collection coll, Comparator c)</span></span>
+<span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">fill</span><span class="hljs-params">(List list, Object obj)</span><span class="hljs-comment">//用指定的元素代替指定list中的所有元素。</span></span>
+<span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">frequency</span><span class="hljs-params">(Collection c, Object o)</span><span class="hljs-comment">//统计元素出现次数</span></span>
+<span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">indexOfSubList</span><span class="hljs-params">(List list, List target)</span><span class="hljs-comment">//统计target在list中第一次出现的索引，找不到则返回-1，类比int lastIndexOfSubList(List source, list target).</span></span>
+<span class="hljs-function"><span class="hljs-keyword">boolean</span> <span class="hljs-title">replaceAll</span><span class="hljs-params">(List list, Object oldVal, Object newVal)</span>, 用新元素替换旧元素</span></code></pre>
+
+<p><strong>示例代码：</strong></p>
+<pre><code class="hljs java">ArrayList&lt;Integer&gt; arrayList = <span class="hljs-keyword">new</span> ArrayList&lt;Integer&gt;();
+arrayList.add(-<span class="hljs-number">1</span>);
+arrayList.add(<span class="hljs-number">3</span>);
+arrayList.add(<span class="hljs-number">3</span>);
+arrayList.add(-<span class="hljs-number">5</span>);
+arrayList.add(<span class="hljs-number">7</span>);
+arrayList.add(<span class="hljs-number">4</span>);
+arrayList.add(-<span class="hljs-number">9</span>);
+arrayList.add(-<span class="hljs-number">7</span>);
+ArrayList&lt;Integer&gt; arrayList2 = <span class="hljs-keyword">new</span> ArrayList&lt;Integer&gt;();
+arrayList2.add(-<span class="hljs-number">3</span>);
+arrayList2.add(-<span class="hljs-number">5</span>);
+arrayList2.add(<span class="hljs-number">7</span>);
+System.out.println(<span class="hljs-string">&quot;原始数组:&quot;</span>);
+System.out.println(arrayList);
+
+System.out.println(<span class="hljs-string">&quot;Collections.max(arrayList):&quot;</span>);
+System.out.println(Collections.max(arrayList));
+
+System.out.println(<span class="hljs-string">&quot;Collections.min(arrayList):&quot;</span>);
+System.out.println(Collections.min(arrayList));
+
+System.out.println(<span class="hljs-string">&quot;Collections.replaceAll(arrayList, 3, -3):&quot;</span>);
+Collections.replaceAll(arrayList, <span class="hljs-number">3</span>, -<span class="hljs-number">3</span>);
+System.out.println(arrayList);
+
+System.out.println(<span class="hljs-string">&quot;Collections.frequency(arrayList, -3):&quot;</span>);
+System.out.println(Collections.frequency(arrayList, -<span class="hljs-number">3</span>));
+
+System.out.println(<span class="hljs-string">&quot;Collections.indexOfSubList(arrayList, arrayList2):&quot;</span>);
+System.out.println(Collections.indexOfSubList(arrayList, arrayList2));
+
+System.out.println(<span class="hljs-string">&quot;Collections.binarySearch(arrayList, 7):&quot;</span>);
+<span class="hljs-comment">// 对List进行二分查找，返回索引，List必须是有序的</span>
+Collections.sort(arrayList);
+System.out.println(Collections.binarySearch(arrayList, <span class="hljs-number">7</span>));</code></pre>
+
+<h3 id="同步控制"><a href="#同步控制" class="headerlink" title="同步控制"></a>同步控制</h3><p>Collections提供了多个<code>synchronizedXxx()</code>方法·，该方法可以将指定集合包装成线程同步的集合，从而解决多线程并发访问集合时的线程安全问题。</p>
+<p>我们知道 HashSet，TreeSet，ArrayList,LinkedList,HashMap,TreeMap 都是线程不安全的。Collections提供了多个静态方法可以把他们包装成线程同步的集合。</p>
+<p><strong>最好不要用下面这些方法，效率非常低，需要线程安全的集合类型时请考虑使用 JUC 包下的并发集合。</strong></p>
+<p>方法如下：</p>
+<pre><code class="hljs java">synchronizedCollection(Collection&lt;T&gt;  c) <span class="hljs-comment">//返回指定 collection 支持的同步（线程安全的）collection。</span>
+synchronizedList(List&lt;T&gt; list)<span class="hljs-comment">//返回指定列表支持的同步（线程安全的）List。</span>
+synchronizedMap(Map&lt;K,V&gt; m) <span class="hljs-comment">//返回由指定映射支持的同步（线程安全的）Map。</span>
+synchronizedSet(Set&lt;T&gt; s) <span class="hljs-comment">//返回指定 set 支持的同步（线程安全的）set。</span></code></pre>
+
+<h3 id="Collections还可以设置不可变集合，提供了如下三类方法："><a href="#Collections还可以设置不可变集合，提供了如下三类方法：" class="headerlink" title="Collections还可以设置不可变集合，提供了如下三类方法："></a>Collections还可以设置不可变集合，提供了如下三类方法：</h3><pre><code class="hljs java">emptyXxx(): 返回一个空的、不可变的集合对象，此处的集合既可以是List，也可以是Set，还可以是Map。
+singletonXxx(): 返回一个只包含指定对象（只有一个或一个元素）的不可变的集合对象，此处的集合可以是：List，Set，Map。
+unmodifiableXxx(): 返回指定集合对象的不可变视图，此处的集合可以是：List，Set，Map。
+上面三类方法的参数是原有的集合对象，返回值是该集合的”只读“版本。</code></pre>
+
+<p><strong>示例代码：</strong></p>
+<pre><code class="hljs java">        ArrayList&lt;Integer&gt; arrayList = <span class="hljs-keyword">new</span> ArrayList&lt;Integer&gt;();
+        arrayList.add(-<span class="hljs-number">1</span>);
+        arrayList.add(<span class="hljs-number">3</span>);
+        arrayList.add(<span class="hljs-number">3</span>);
+        arrayList.add(-<span class="hljs-number">5</span>);
+        arrayList.add(<span class="hljs-number">7</span>);
+        arrayList.add(<span class="hljs-number">4</span>);
+        arrayList.add(-<span class="hljs-number">9</span>);
+        arrayList.add(-<span class="hljs-number">7</span>);
+        HashSet&lt;Integer&gt; integers1 = <span class="hljs-keyword">new</span> HashSet&lt;&gt;();
+        integers1.add(<span class="hljs-number">1</span>);
+        integers1.add(<span class="hljs-number">3</span>);
+        integers1.add(<span class="hljs-number">2</span>);
+        Map scores = <span class="hljs-keyword">new</span> HashMap();
+        scores.put(<span class="hljs-string">&quot;语文&quot;</span> , <span class="hljs-number">80</span>);
+        scores.put(<span class="hljs-string">&quot;Java&quot;</span> , <span class="hljs-number">82</span>);
+
+        <span class="hljs-comment">//Collections.emptyXXX();创建一个空的、不可改变的XXX对象</span>
+        List&lt;Object&gt; list = Collections.emptyList();
+        System.out.println(list);<span class="hljs-comment">//[]</span>
+        Set&lt;Object&gt; objects = Collections.emptySet();
+        System.out.println(objects);<span class="hljs-comment">//[]</span>
+        Map&lt;Object, Object&gt; objectObjectMap = Collections.emptyMap();
+        System.out.println(objectObjectMap);<span class="hljs-comment">//&#123;&#125;</span>
+
+        <span class="hljs-comment">//Collections.singletonXXX();</span>
+        List&lt;ArrayList&lt;Integer&gt;&gt; arrayLists = Collections.singletonList(arrayList);
+        System.out.println(arrayLists);<span class="hljs-comment">//[[-1, 3, 3, -5, 7, 4, -9, -7]]</span>
+        <span class="hljs-comment">//创建一个只有一个元素，且不可改变的Set对象</span>
+        Set&lt;ArrayList&lt;Integer&gt;&gt; singleton = Collections.singleton(arrayList);
+        System.out.println(singleton);<span class="hljs-comment">//[[-1, 3, 3, -5, 7, 4, -9, -7]]</span>
+        Map&lt;String, String&gt; nihao = Collections.singletonMap(<span class="hljs-string">&quot;1&quot;</span>, <span class="hljs-string">&quot;nihao&quot;</span>);
+        System.out.println(nihao);<span class="hljs-comment">//&#123;1=nihao&#125;</span>
+
+        <span class="hljs-comment">//unmodifiableXXX();创建普通XXX对象对应的不可变版本</span>
+        List&lt;Integer&gt; integers = Collections.unmodifiableList(arrayList);
+        System.out.println(integers);<span class="hljs-comment">//[-1, 3, 3, -5, 7, 4, -9, -7]</span>
+        Set&lt;Integer&gt; integers2 = Collections.unmodifiableSet(integers1);
+        System.out.println(integers2);<span class="hljs-comment">//[1, 2, 3]</span>
+        Map&lt;Object, Object&gt; objectObjectMap2 = Collections.unmodifiableMap(scores);
+        System.out.println(objectObjectMap2);<span class="hljs-comment">//&#123;Java=82, 语文=80&#125;</span>
+
+        <span class="hljs-comment">//添加出现异常：java.lang.UnsupportedOperationException</span>
+<span class="hljs-comment">//        list.add(1);</span>
+<span class="hljs-comment">//        arrayLists.add(arrayList);</span>
+<span class="hljs-comment">//        integers.add(1);</span></code></pre>
+
+<h2 id="Arrays类的常见操作"><a href="#Arrays类的常见操作" class="headerlink" title="Arrays类的常见操作"></a>Arrays类的常见操作</h2><ol>
+<li>排序 : <code>sort()</code></li>
+<li>查找 : <code>binarySearch()</code></li>
+<li>比较: <code>equals()</code></li>
+<li>填充 : <code>fill()</code></li>
+<li>转列表:  <code>asList()</code></li>
+<li>转字符串 : <code>toString()</code></li>
+<li>复制: <code>copyOf()</code></li>
+</ol>
+<h3 id="排序-sort"><a href="#排序-sort" class="headerlink" title="排序 : sort()"></a>排序 : <code>sort()</code></h3><pre><code class="hljs java"><span class="hljs-comment">// *************排序 sort****************</span>
+<span class="hljs-keyword">int</span> a[] = &#123; <span class="hljs-number">1</span>, <span class="hljs-number">3</span>, <span class="hljs-number">2</span>, <span class="hljs-number">7</span>, <span class="hljs-number">6</span>, <span class="hljs-number">5</span>, <span class="hljs-number">4</span>, <span class="hljs-number">9</span> &#125;;
+<span class="hljs-comment">// sort(int[] a)方法按照数字顺序排列指定的数组。</span>
+Arrays.sort(a);
+System.out.println(<span class="hljs-string">&quot;Arrays.sort(a):&quot;</span>);
+<span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i : a) &#123;
+	System.out.print(i);
+&#125;
+<span class="hljs-comment">// 换行</span>
+System.out.println();
+
+<span class="hljs-comment">// sort(int[] a,int fromIndex,int toIndex)按升序排列数组的指定范围</span>
+<span class="hljs-keyword">int</span> b[] = &#123; <span class="hljs-number">1</span>, <span class="hljs-number">3</span>, <span class="hljs-number">2</span>, <span class="hljs-number">7</span>, <span class="hljs-number">6</span>, <span class="hljs-number">5</span>, <span class="hljs-number">4</span>, <span class="hljs-number">9</span> &#125;;
+Arrays.sort(b, <span class="hljs-number">2</span>, <span class="hljs-number">6</span>);
+System.out.println(<span class="hljs-string">&quot;Arrays.sort(b, 2, 6):&quot;</span>);
+<span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i : b) &#123;
+	System.out.print(i);
+&#125;
+<span class="hljs-comment">// 换行</span>
+System.out.println();
+
+<span class="hljs-keyword">int</span> c[] = &#123; <span class="hljs-number">1</span>, <span class="hljs-number">3</span>, <span class="hljs-number">2</span>, <span class="hljs-number">7</span>, <span class="hljs-number">6</span>, <span class="hljs-number">5</span>, <span class="hljs-number">4</span>, <span class="hljs-number">9</span> &#125;;
+<span class="hljs-comment">// parallelSort(int[] a) 按照数字顺序排列指定的数组(并行的)。同sort方法一样也有按范围的排序</span>
+Arrays.parallelSort(c);
+System.out.println(<span class="hljs-string">&quot;Arrays.parallelSort(c)：&quot;</span>);
+<span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i : c) &#123;
+	System.out.print(i);
+&#125;
+<span class="hljs-comment">// 换行</span>
+System.out.println();
+
+<span class="hljs-comment">// parallelSort给字符数组排序，sort也可以</span>
+<span class="hljs-keyword">char</span> d[] = &#123; <span class="hljs-string">&#x27;a&#x27;</span>, <span class="hljs-string">&#x27;f&#x27;</span>, <span class="hljs-string">&#x27;b&#x27;</span>, <span class="hljs-string">&#x27;c&#x27;</span>, <span class="hljs-string">&#x27;e&#x27;</span>, <span class="hljs-string">&#x27;A&#x27;</span>, <span class="hljs-string">&#x27;C&#x27;</span>, <span class="hljs-string">&#x27;B&#x27;</span> &#125;;
+Arrays.parallelSort(d);
+System.out.println(<span class="hljs-string">&quot;Arrays.parallelSort(d)：&quot;</span>);
+<span class="hljs-keyword">for</span> (<span class="hljs-keyword">char</span> d2 : d) &#123;
+	System.out.print(d2);
+&#125;
+<span class="hljs-comment">// 换行</span>
+System.out.println();
+</code></pre>
+
+<p>在做算法面试题的时候，我们还可能会经常遇到对字符串排序的情况,<code>Arrays.sort()</code> 对每个字符串的特定位置进行比较，然后按照升序排序。</p>
+<pre><code class="hljs java">String[] strs = &#123; <span class="hljs-string">&quot;abcdehg&quot;</span>, <span class="hljs-string">&quot;abcdefg&quot;</span>, <span class="hljs-string">&quot;abcdeag&quot;</span> &#125;;
+Arrays.sort(strs);
+System.out.println(Arrays.toString(strs));<span class="hljs-comment">//[abcdeag, abcdefg, abcdehg]</span></code></pre>
+
+<h3 id="查找-binarySearch"><a href="#查找-binarySearch" class="headerlink" title="查找 : binarySearch()"></a>查找 : <code>binarySearch()</code></h3><pre><code class="hljs java"><span class="hljs-comment">// *************查找 binarySearch()****************</span>
+<span class="hljs-keyword">char</span>[] e = &#123; <span class="hljs-string">&#x27;a&#x27;</span>, <span class="hljs-string">&#x27;f&#x27;</span>, <span class="hljs-string">&#x27;b&#x27;</span>, <span class="hljs-string">&#x27;c&#x27;</span>, <span class="hljs-string">&#x27;e&#x27;</span>, <span class="hljs-string">&#x27;A&#x27;</span>, <span class="hljs-string">&#x27;C&#x27;</span>, <span class="hljs-string">&#x27;B&#x27;</span> &#125;;
+<span class="hljs-comment">// 排序后再进行二分查找，否则找不到</span>
+Arrays.sort(e);
+System.out.println(<span class="hljs-string">&quot;Arrays.sort(e)&quot;</span> + Arrays.toString(e));
+System.out.println(<span class="hljs-string">&quot;Arrays.binarySearch(e, &#x27;c&#x27;)：&quot;</span>);
+<span class="hljs-keyword">int</span> s = Arrays.binarySearch(e, <span class="hljs-string">&#x27;c&#x27;</span>);
+System.out.println(<span class="hljs-string">&quot;字符c在数组的位置：&quot;</span> + s);</code></pre>
+
+<h3 id="比较-equals"><a href="#比较-equals" class="headerlink" title="比较: equals()"></a>比较: <code>equals()</code></h3><pre><code class="hljs java"><span class="hljs-comment">// *************比较 equals****************</span>
+<span class="hljs-keyword">char</span>[] e = &#123; <span class="hljs-string">&#x27;a&#x27;</span>, <span class="hljs-string">&#x27;f&#x27;</span>, <span class="hljs-string">&#x27;b&#x27;</span>, <span class="hljs-string">&#x27;c&#x27;</span>, <span class="hljs-string">&#x27;e&#x27;</span>, <span class="hljs-string">&#x27;A&#x27;</span>, <span class="hljs-string">&#x27;C&#x27;</span>, <span class="hljs-string">&#x27;B&#x27;</span> &#125;;
+<span class="hljs-keyword">char</span>[] f = &#123; <span class="hljs-string">&#x27;a&#x27;</span>, <span class="hljs-string">&#x27;f&#x27;</span>, <span class="hljs-string">&#x27;b&#x27;</span>, <span class="hljs-string">&#x27;c&#x27;</span>, <span class="hljs-string">&#x27;e&#x27;</span>, <span class="hljs-string">&#x27;A&#x27;</span>, <span class="hljs-string">&#x27;C&#x27;</span>, <span class="hljs-string">&#x27;B&#x27;</span> &#125;;
+<span class="hljs-comment">/*</span>
+<span class="hljs-comment">* 元素数量相同，并且相同位置的元素相同。 另外，如果两个数组引用都是null，则它们被认为是相等的 。</span>
+<span class="hljs-comment">*/</span>
+<span class="hljs-comment">// 输出true</span>
+System.out.println(<span class="hljs-string">&quot;Arrays.equals(e, f):&quot;</span> + Arrays.equals(e, f));</code></pre>
+
+<h3 id="填充-fill"><a href="#填充-fill" class="headerlink" title="填充 : fill()"></a>填充 : <code>fill()</code></h3><pre><code class="hljs java"><span class="hljs-comment">// *************填充fill(批量初始化)****************</span>
+<span class="hljs-keyword">int</span>[] g = &#123; <span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>, <span class="hljs-number">3</span>, <span class="hljs-number">3</span>, <span class="hljs-number">3</span>, <span class="hljs-number">6</span>, <span class="hljs-number">6</span>, <span class="hljs-number">6</span> &#125;;
+<span class="hljs-comment">// 数组中所有元素重新分配值</span>
+Arrays.fill(g, <span class="hljs-number">3</span>);
+System.out.println(<span class="hljs-string">&quot;Arrays.fill(g, 3)：&quot;</span>);
+<span class="hljs-comment">// 输出结果：333333333</span>
+<span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i : g) &#123;
+	System.out.print(i);
+&#125;
+<span class="hljs-comment">// 换行</span>
+System.out.println();
+
+<span class="hljs-keyword">int</span>[] h = &#123; <span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>, <span class="hljs-number">3</span>, <span class="hljs-number">3</span>, <span class="hljs-number">3</span>, <span class="hljs-number">6</span>, <span class="hljs-number">6</span>, <span class="hljs-number">6</span>, &#125;;
+<span class="hljs-comment">// 数组中指定范围元素重新分配值</span>
+Arrays.fill(h, <span class="hljs-number">0</span>, <span class="hljs-number">2</span>, <span class="hljs-number">9</span>);
+System.out.println(<span class="hljs-string">&quot;Arrays.fill(h, 0, 2, 9);：&quot;</span>);
+<span class="hljs-comment">// 输出结果：993333666</span>
+<span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i : h) &#123;
+	System.out.print(i);
+&#125;</code></pre>
+
+<h3 id="转列表-asList"><a href="#转列表-asList" class="headerlink" title="转列表 asList()"></a>转列表 <code>asList()</code></h3><pre><code class="hljs java"><span class="hljs-comment">// *************转列表 asList()****************</span>
+<span class="hljs-comment">/*</span>
+<span class="hljs-comment"> * 返回由指定数组支持的固定大小的列表。</span>
+<span class="hljs-comment"> * （将返回的列表更改为“写入数组”。）该方法作为基于数组和基于集合的API之间的桥梁，与Collection.toArray()相结合 。</span>
+<span class="hljs-comment"> * 返回的列表是可序列化的，并实现RandomAccess 。</span>
+<span class="hljs-comment"> * 此方法还提供了一种方便的方式来创建一个初始化为包含几个元素的固定大小的列表如下：</span>
+<span class="hljs-comment"> */</span>
+List&lt;String&gt; stooges = Arrays.asList(<span class="hljs-string">&quot;Larry&quot;</span>, <span class="hljs-string">&quot;Moe&quot;</span>, <span class="hljs-string">&quot;Curly&quot;</span>);
+System.out.println(stooges);</code></pre>
+
+<h3 id="转字符串-toString"><a href="#转字符串-toString" class="headerlink" title="转字符串 toString()"></a>转字符串 <code>toString()</code></h3><pre><code class="hljs java"><span class="hljs-comment">// *************转字符串 toString()****************</span>
+<span class="hljs-comment">/*</span>
+<span class="hljs-comment">* 返回指定数组的内容的字符串表示形式。</span>
+<span class="hljs-comment">*/</span>
+<span class="hljs-keyword">char</span>[] k = &#123; <span class="hljs-string">&#x27;a&#x27;</span>, <span class="hljs-string">&#x27;f&#x27;</span>, <span class="hljs-string">&#x27;b&#x27;</span>, <span class="hljs-string">&#x27;c&#x27;</span>, <span class="hljs-string">&#x27;e&#x27;</span>, <span class="hljs-string">&#x27;A&#x27;</span>, <span class="hljs-string">&#x27;C&#x27;</span>, <span class="hljs-string">&#x27;B&#x27;</span> &#125;;
+System.out.println(Arrays.toString(k));<span class="hljs-comment">// [a, f, b, c, e, A, C, B]</span></code></pre>
+
+<h3 id="复制-copyOf"><a href="#复制-copyOf" class="headerlink" title="复制 copyOf()"></a>复制 <code>copyOf()</code></h3><pre><code class="hljs java"><span class="hljs-comment">// *************复制 copy****************</span>
+<span class="hljs-comment">// copyOf 方法实现数组复制,h为数组，6为复制的长度</span>
+<span class="hljs-keyword">int</span>[] h = &#123; <span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>, <span class="hljs-number">3</span>, <span class="hljs-number">3</span>, <span class="hljs-number">3</span>, <span class="hljs-number">6</span>, <span class="hljs-number">6</span>, <span class="hljs-number">6</span>, &#125;;
+<span class="hljs-keyword">int</span> i[] = Arrays.copyOf(h, <span class="hljs-number">6</span>);
+System.out.println(<span class="hljs-string">&quot;Arrays.copyOf(h, 6);：&quot;</span>);
+<span class="hljs-comment">// 输出结果：123333</span>
+<span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> j : i) &#123;
+	System.out.print(j);
+&#125;
+<span class="hljs-comment">// 换行</span>
+System.out.println();
+<span class="hljs-comment">// copyOfRange将指定数组的指定范围复制到新数组中</span>
+<span class="hljs-keyword">int</span> j[] = Arrays.copyOfRange(h, <span class="hljs-number">6</span>, <span class="hljs-number">11</span>);
+System.out.println(<span class="hljs-string">&quot;Arrays.copyOfRange(h, 6, 11)：&quot;</span>);
+<span class="hljs-comment">// 输出结果66600(h数组只有9个元素这里是从索引6到索引11复制所以不足的就为0)</span>
+<span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> j2 : j) &#123;
+	System.out.print(j2);
+&#125;
+<span class="hljs-comment">// 换行</span>
+System.out.println();</code></pre>
+            </div>
+            <hr>
+            <div>
+              <div class="post-metas mb-3">
+                
+                
+                  <div class="post-meta">
+                    <i class="iconfont icon-tags"></i>
+                    
+                      <a class="hover-with-bg" href="/tags/Java%E7%9F%A5%E8%AF%86%E7%82%B9/">Java知识点</a>
+                    
+                  </div>
+                
+              </div>
+              
+                <p class="note note-warning">本博客所有文章除特别声明外，均采用 <a target="_blank" href="https://creativecommons.org/licenses/by-sa/4.0/deed.zh" rel="nofollow noopener noopener">CC BY-SA 4.0 协议</a> ，转载请注明出处！</p>
+              
+              
+                <div class="post-prevnext row">
+                  <article class="post-prev col-6">
+                    
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/2020/09/04/Java%E5%85%B3%E9%94%AE%E5%AD%97%E6%80%BB%E7%BB%93/">
+                        <span class="hidden-mobile">Java关键字总结</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+          </article>
+        </div>
+      </div>
+    </div>
+    
+      <div class="d-none d-lg-block col-lg-2 toc-container" id="toc-ctn">
+        <div id="toc">
+  <p class="toc-header"><i class="iconfont icon-list"></i>&nbsp;目录</p>
+  <div id="tocbot"></div>
+</div>
+
+      </div>
+    
+  </div>
+</div>
+
+<!-- Custom -->
+
+
+    
+  </main>
+
+  
+    <a id="scroll-top-button" href="#" role="button">
+      <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+    </a>
+  
+
+  
+    <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v"
+                 for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+  
+
+  
+
+  
+
+  <footer class="mt-5">
+  <div class="text-center py-3">
+    <div>
+      <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a>
+      <i class="iconfont icon-love"></i>
+      <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener">
+        <span>Fluid</span></a>
+    </div>
+    
+
+    
+
+    
+  </div>
+</footer>
+
+<!-- SCRIPTS -->
+<script  src="https://cdn.staticfile.org/jquery/3.4.1/jquery.min.js" ></script>
+<script  src="https://cdn.staticfile.org/twitter-bootstrap/4.4.1/js/bootstrap.min.js" ></script>
+<script  src="/js/debouncer.js" ></script>
+<script  src="/js/main.js" ></script>
+
+<!-- Plugins -->
+
+
+  
+    <script  src="/js/lazyload.js" ></script>
+  
+
+
+
+  <script defer src="https://cdn.staticfile.org/clipboard.js/2.0.6/clipboard.min.js" ></script>
+  <script  src="/js/clipboard-use.js" ></script>
+
+
+
+
+
+
+
+  <script  src="https://cdn.staticfile.org/tocbot/4.11.1/tocbot.min.js" ></script>
+  <script>
+    $(document).ready(function () {
+      var boardCtn = $('#board-ctn');
+      var boardTop = boardCtn.offset().top;
+
+      tocbot.init({
+        tocSelector: '#tocbot',
+        contentSelector: '#post-body',
+        headingSelector: 'h1,h2,h3,h4,h5,h6',
+        linkClass: 'tocbot-link',
+        activeLinkClass: 'tocbot-active-link',
+        listClass: 'tocbot-list',
+        isCollapsedClass: 'tocbot-is-collapsed',
+        collapsibleClass: 'tocbot-is-collapsible',
+        collapseDepth: 0,
+        scrollSmooth: true,
+        headingsOffset: -boardTop
+      });
+      if ($('.toc-list-item').length > 0) {
+        $('#toc').css('visibility', 'visible');
+      }
+    });
+  </script>
+
+
+
+  <script  src="https://cdn.staticfile.org/typed.js/2.0.11/typed.min.js" ></script>
+  <script>
+    var typed = new Typed('#subtitle', {
+      strings: [
+        '  ',
+        "Collections 工具类和 Arrays 工具类常见方法&nbsp;",
+      ],
+      cursorChar: "_",
+      typeSpeed: 70,
+      loop: false,
+    });
+    typed.stop();
+    $(document).ready(function () {
+      $(".typed-cursor").addClass("h2");
+      typed.start();
+    });
+  </script>
+
+
+
+  <script  src="https://cdn.staticfile.org/anchor-js/4.2.2/anchor.min.js" ></script>
+  <script>
+    anchors.options = {
+      placement: "right",
+      visible: "hover",
+      
+    };
+    var el = "h1,h2,h3,h4,h5,h6".split(",");
+    var res = [];
+    for (item of el) {
+      res.push(".markdown-body > " + item)
+    }
+    anchors.add(res.join(", "))
+  </script>
+
+
+
+  <script  src="/js/local-search.js" ></script>
+  <script>
+    var path = "/local-search.xml";
+    var inputArea = document.querySelector("#local-search-input");
+    inputArea.onclick = function () {
+      searchFunc(path, 'local-search-input', 'local-search-result');
+      this.onclick = null
+    }
+  </script>
+
+
+
+  <script  src="https://cdn.staticfile.org/fancybox/3.5.7/jquery.fancybox.min.js" ></script>
+  <link  rel="stylesheet" href="https://cdn.staticfile.org/fancybox/3.5.7/jquery.fancybox.min.css" />
+
+  <script>
+    $('#post img:not(.no-zoom img, img[no-zoom]), img[zoom]').each(
+      function () {
+        var element = document.createElement('a');
+        $(element).attr('data-fancybox', 'images');
+        $(element).attr('href', $(this).attr('src'));
+        $(this).wrap(element);
+      }
+    );
+  </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>
