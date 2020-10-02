@@ -176,6 +176,42 @@
     
     <article class="col-12 col-md-12 mx-auto index-info">
       <h1 class="index-header">
+        <a href="/2020/09/02/Tomcat%E9%97%AE%E9%A2%98%E6%80%BB%E7%BB%93/">Tomcat问题总结</a>
+      </h1>
+
+      <p class="index-excerpt">
+        <a href="/2020/09/02/Tomcat%E9%97%AE%E9%A2%98%E6%80%BB%E7%BB%93/">
+          
+          
+            
+          
+          The valid characters are defined in RFC 7230 and RFC 3986发生该问题说明Tomcat对Url参数进行了验证解决方案：
+在catalina.properties 文件中添加如下配置
+tomcat.util.http.parser.HttpParser.requestTargetAllow=\|&#123;&#125;
+
+        </a>
+      </p>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2020-09-02 12:55" pubdate>
+              2020-09-02
+            </time>
+          </div>
+        
+        
+        
+      </div>
+    </article>
+  </div>
+
+  <div class="row mx-auto index-card">
+    
+    
+    <article class="col-12 col-md-12 mx-auto index-info">
+      <h1 class="index-header">
         <a href="/2020/09/02/Nacos%E9%97%AE%E9%A2%98%E6%80%BB%E7%BB%93/">Nacos问题总结</a>
       </h1>
 
