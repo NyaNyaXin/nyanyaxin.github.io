@@ -187,7 +187,7 @@
     <link href="/2020/09/02/Linux%E9%97%AE%E9%A2%98%E6%80%BB%E7%BB%93-1/"/>
     <url>/2020/09/02/Linux%E9%97%AE%E9%A2%98%E6%80%BB%E7%BB%93-1/</url>
     
-    <content type="html"><![CDATA[<h1 id="Vmware虚拟机安装CentOSlinux最小化系统后无法上网"><a href="#Vmware虚拟机安装CentOSlinux最小化系统后无法上网" class="headerlink" title="Vmware虚拟机安装CentOSlinux最小化系统后无法上网"></a>Vmware虚拟机安装CentOSlinux最小化系统后无法上网</h1><p>需要修改网卡设置</p><pre><code class="hljs shell">cd /etc/sysconfig/network-scriptvim ifcfg-ens33（名称有可能不同）  修改 ONBOOT=yes</code></pre><h1 id="Vmware虚拟机安装后无法进行SSH远程访问（测试环境Ubuntu18）"><a href="#Vmware虚拟机安装后无法进行SSH远程访问（测试环境Ubuntu18）" class="headerlink" title="Vmware虚拟机安装后无法进行SSH远程访问（测试环境Ubuntu18）"></a>Vmware虚拟机安装后无法进行SSH远程访问（测试环境Ubuntu18）</h1><p>解决方法</p><pre><code>        ①检查防火墙设置并对端口进行放行        ②检查是否安装了ssh-server 如果没有安装则需要进行安装</code></pre>]]></content>
+    <content type="html"><![CDATA[<h1 id="Vmware虚拟机安装CentOSlinux最小化系统后无法上网"><a href="#Vmware虚拟机安装CentOSlinux最小化系统后无法上网" class="headerlink" title="Vmware虚拟机安装CentOSlinux最小化系统后无法上网"></a>Vmware虚拟机安装CentOSlinux最小化系统后无法上网</h1><p>需要修改网卡设置</p><pre><code class="hljs shell">cd /etc/sysconfig/network-scriptvim ifcfg-ens33（名称有可能不同）  修改 ONBOOT=yes</code></pre><h1 id="Vmware虚拟机安装后无法进行SSH远程访问（测试环境Ubuntu18）"><a href="#Vmware虚拟机安装后无法进行SSH远程访问（测试环境Ubuntu18）" class="headerlink" title="Vmware虚拟机安装后无法进行SSH远程访问（测试环境Ubuntu18）"></a>Vmware虚拟机安装后无法进行SSH远程访问（测试环境Ubuntu18）</h1><p>解决方法</p><pre><code>        ①检查防火墙设置并对端口进行放行        ②检查是否安装了ssh-server 如果没有安装则需要进行安装</code></pre><h1 id="添加自己的systemd执行文件后，报权限不足的情况"><a href="#添加自己的systemd执行文件后，报权限不足的情况" class="headerlink" title="添加自己的systemd执行文件后，报权限不足的情况"></a>添加自己的systemd执行文件后，报权限不足的情况</h1><pre><code>        关闭SELinux即可        修改/etc/selinux/config的SELINUX=disabled配置即可</code></pre>]]></content>
     
     
     
